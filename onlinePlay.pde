@@ -118,7 +118,6 @@ void onlS() {
 }
 
 void onlLVSBefore() {
-  println("world:"+worldValid);
 
   background(184, 241, 241);
   textSize(120);

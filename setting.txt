@@ -6,3 +6,4 @@ SoundVolume : 100
 MusicVoluem : 100
 EffectVolume : 100
 Language : En
+AIlevel : 2

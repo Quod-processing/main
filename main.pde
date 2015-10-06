@@ -1,9 +1,9 @@
 //v0.4.0b2
 //beware for singleAI in ai check time.
 void draw() {
-  //  println(frameRate);
-  println(escmod);
+
   if (myClient.available()>0) recieveServer();
+  
   if (escmod == 0) menu();
   else switch(gmod) {
   case 0:
@@ -48,7 +48,8 @@ void draw() {
 }
 
 void mouseReleased() {
-  if (clicked==1) click=-1;
+  if (escmod==0) click=1;
+  else if (clicked==1) click=-1;
   else click=1;
 
   clicked+=1;

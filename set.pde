@@ -4,10 +4,11 @@ import processing.net.*;
 SoundFile sound;
 Client myClient;
 
-PImage License, musicAlbum, mileuIcon;
+PImage License, musicAlbum, mileuIcon ;
 BufferedReader reader;
 String[] Settings = new String[20];
-int dataIn; 
+int dataIn;
+    
 
 int gmod, turn;// game mode, 0:startmenu, 1:single, 2:UDP, 3:udp server, 4:udp client, 5:A win, 6:B win, turn is play turn 0:A(ai), 1:B(ai), 2: A after do his color block(ai), 3 : B after do his color block(ai) 4:A(1vs1), 5:B(1vs1), 6: A after do his color block(1vs1), 7 : B after do his color block(1vs1)
 int escmod = -1;//help, option, menu
@@ -31,8 +32,6 @@ int loginCache=-1;
 int loginCacheSmall=0;
 int invalidIDPD=0;
 int worldValid=333333;
-String ServerIP = "14.63.60.56";
-String ServerIP2 ="127.0.0.1";
 
 int click, clicked;
 PFont font;
@@ -41,7 +40,7 @@ PFont font;
 void settings() {
 
   size(1136, 640);
-  pixelDensity(2);
+  pixelDensity(displayDensity());
 }
 
 void setup() {
