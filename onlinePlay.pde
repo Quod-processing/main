@@ -75,11 +75,13 @@ void onlL() {
     if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
       fill(241, 232, 212);
       if (mouseY>300&&mouseY<370) {
+        cursor(TEXT);
         rect(width/2-140, 300, 280, 70);
         fill(0);
         text(loginID, width/2, 335);
         loginCache=0;
       } else if (mouseY>380&&mouseY<450) {
+        cursor(TEXT);
         rect(width/2-140, 380, 280, 70);
         fill(0);
         text(loginPD, width/2, 415);
@@ -89,11 +91,11 @@ void onlL() {
         fill(0);
         text("Login?", width/2, 495);
         if (click==1) {
-          gmod= -3;
-          click=0;
+          gmod = -3;
+          click = 0;
         }
-      }
-    }
+      } else cursor(ARROW);
+    } else cursor(ARROW);
   }
 }
 

@@ -41,6 +41,12 @@ void menu() {
     fill(0);
     text("display", width*3/8+12, 57);
     
+    textAlign(LEFT, CENTER);
+    text("resolution", 60, 110);
+    text(Settings[0], 300, 110);
+    text("X", 370, 110);
+    text(Settings[1], 400, 110);
+
     upmenuButton();
     break;
 
@@ -56,6 +62,12 @@ void menu() {
     fill(0);
     text("sound", width*5/8-12, 57);
     
+    textAlign(LEFT, CENTER);
+    text("resolution", 60, 110);
+    text(Settings[0], 300, 110);
+    text("X", 370, 110);
+    text(Settings[1], 400, 110);
+
     upmenuButton();
     break;
 
@@ -70,12 +82,20 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("network", width*7/8-36, 57);
+    
+    textAlign(LEFT, CENTER);
+    text("server IP", 80, 130);
+    text(Settings[2], 350, 130);
+    text("server PORT", 80, 200);
+    text(Settings[3], 350, 200);
+    
     upmenuButton();
     break;
   }
 }
 
 void upmenuButton() {
+  textAlign(CENTER, CENTER);
   if (mouseY<=87&&mouseY>=27) {
     if (mouseX>=48&&mouseX<=width/4+24) {
       fill(0);
@@ -188,29 +208,28 @@ void reset() {
   turn=-1;
 }
 
-void readText(){
+void readText() {
   int i=0;
   int readableCache=1;
-  while(readableCache==1){
-    
+  while (readableCache==1) {
+
     try {
-    Settings[i] = reader.readLine();
-  } catch (IOException e) {
-    e.printStackTrace();
-    Settings[i] = null;
+      Settings[i] = reader.readLine();
+    } 
+    catch (IOException e) {
+      e.printStackTrace();
+      Settings[i] = null;
+    }
+    if (Settings[i] == null) readableCache=0;
+    i++;
   }
-  if(Settings[i] == null) readableCache=0;
-  i++;
-  }
-  
 }
 
-void indexText(){
+void indexText() {
   int i=0;
-  while(Settings[i]!=null){
+  while (Settings[i]!=null) {
     String indexTextCache[] = split(Settings[i], ":");
     Settings[i]=trim(indexTextCache[1]);
     i++;
   }
-
 }

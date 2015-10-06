@@ -1,7 +1,7 @@
 //v0.4.0b2
 //beware for singleAI in ai check time.
 void draw() {
-
+  
   if (myClient.available()>0) recieveServer();
   
   if (escmod == 0) menu();
