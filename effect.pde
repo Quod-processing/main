@@ -9,12 +9,9 @@ void state() {
   strokeWeight(3);
   if (myClient.active()==true) fill(0, 255, 0);
   else{
-    fill(23, 93, 126);
-    rect(width-320,60,280,20);
-    if(mouseX>width-320 && mouseX<width-40 && mouseY>60 && mouseY<80){
-      fill(255);
-      rect(width-320,60,280,20);
-      text("reconnect", width-60,70);
+    fill(0);
+    text("reconnect?", width-40, 70);
+    if(mouseX>width-170 && mouseX<width-40 && mouseY>40 && mouseY<80){
       if(click==-1){
         myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
       }
