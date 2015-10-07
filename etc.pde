@@ -22,7 +22,7 @@ void menu() {
     text("info", width/8+36, 57);
     text("quod v0.4.0b2", width/2, 120);
     image(mileuIcon, width/2, 220, 130, 130);
-    text("this software is by mileu", width/2, 310);
+    text("software by mileu, seungwonpark", width/2, 310);
     image(musicAlbum, width/2, 400, 130, 130);
     text("OST by Lepellec dominique", width/2, 490);
     image(License, width/2, 560, 361, 145);

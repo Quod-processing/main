@@ -2,7 +2,7 @@ DisplayWidth : 1136
 DisplayHeight : 640
 ServerIP14.63.60.56 : 127.0.0.1
 ServerPort : 11084
-SoundVolume : 100
+SoundVolume : 10
 MusicVoluem : 100
 EffectVolume : 100
 Language : En
