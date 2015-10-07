@@ -3,7 +3,6 @@
 void draw() {
   
   if (myClient.available()>0) recieveServer();
-  else if(frameCount%120==0) myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
   
   if (escmod == 0) menu();
   else switch(gmod) {

@@ -8,7 +8,19 @@ void state() {
   stroke(255);
   strokeWeight(3);
   if (myClient.active()==true) fill(0, 255, 0);
-  else fill(255, 0, 0);
+  else{
+    fill(23, 93, 126);
+    rect(width-320,60,280,20);
+    if(mouseX>width-320 && mouseX<width-40 && mouseY>60 && mouseY<80){
+      fill(255);
+      rect(width-320,60,280,20);
+      text("reconnect", width-60,70);
+      if(click==-1){
+        myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
+      }
+    }
+    fill(255, 0, 0);
+  }
   ellipse(width-50, 50, 20, 20);
 }
 void chkQd(int aorb) {
