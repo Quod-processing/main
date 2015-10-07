@@ -33,14 +33,14 @@ void statM() {
 
     if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
       fill(241, 232, 212);
-      if (mouseY>300&&mouseY<370) {
+      if (mouseY>300&&mouseY<370) { // Local Play
         rect(width/2-140, 300, 280, 70);
         if (click==-1) {
           gmod=1;
           click=0;
           clicked=2;
         }
-      } else if (mouseY>380&&mouseY<450) {
+      } else if (mouseY>380&&mouseY<450) { // Online Play
         rect(width/2-140, 380, 280, 70);
         if (myClient.active()==false) {
           fill(255, 0, 0);
@@ -52,8 +52,13 @@ void statM() {
           click=0;
           clicked=2;
         }
-      } else if (mouseY>460&&mouseY<530) {
+      } else if (mouseY>460&&mouseY<530) { // Help
         rect(width/2-140, 460, 280, 70);
+        if (click==-1) {
+          gmod=7;
+          click=0;
+          clicked=2;
+        }
       }
     }
   }

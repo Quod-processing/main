@@ -7,39 +7,43 @@ void draw() {
   if (escmod == 0) menu();
   else switch(gmod) {
   case 0:
-    statM();
+    statM(); // start menu
     break;
 
   case 1:
-    snglP();
+    snglP(); // singlePlay
     break;
 
   case 2:
-    onL();
+    onL(); // onlinePlay
     break;
 
   case 3:
-    onlL();
+    onlL(); // ?
     break;
 
   case -3:
-    onlLR();
+    onlLR(); // ?
     break;
 
   case 10:
-    onlLVSBefore();
+    onlLVSBefore(); // ?
     break;
 
   case 4:
-    onlS();
+    onlS(); // ?
     break;
 
   case 5:
-    aWin();
+    aWin(); // a win
     break;
 
   case 6:
-    bWin();
+    bWin(); // b win
+    break;
+    
+  case 7:
+    help(); // help
     break;
   }
   if (statemod==1) state();

@@ -151,8 +151,18 @@ void aWin() {
   textSize(60);
   fill(0);     
   text("Replay?", 124, 590);
+  
+  fill(193, 243, 214);     
+  rect(0, 640, 248, 100); 
+  textSize(60);
+  fill(0);     
+  text("Main Menu", 124, 690);
 
-  if (click==1&&mouseX<248&&mouseY>540) {
+  if (click==1 && mouseX<248 && mouseY>540 && mouseY<630) {
+    gmod=1;
+    reset();
+  }
+  if (click==1 && mouseX<248 && mouseY>640 && mouseY<730) {
     gmod=0;
     reset();
   }
