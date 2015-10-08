@@ -1,7 +1,10 @@
 //set the mod of single play, with ai or 1 vs 1
 
 void snglP() {
+
   if (turn<0) {
+    statemod=1;
+
     if (clicked>0) {
       background(184, 241, 241);
       textSize(120);

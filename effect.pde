@@ -2,27 +2,35 @@
 //state
 void state() {
   //settings
-   shape(settingsIcon, 10, 10, 30, 30);
+  shape(settingsIcon, 10, 10, 30, 30);
+  if (mouseX<=50 && mouseY<=50) {
+    textAlign(LEFT, CENTER);
+    textSize(30);
+    fill(0);
+    text("settings", 50, 25);
+    if(click==1||click==-1) escmod = 0;
+  }
+  
   //server state
   textAlign(RIGHT, CENTER);
   textSize(30);
   fill(0);
-  text("server", width-60, 50);
+  text("server", width-30, 40);
   stroke(255);
   strokeWeight(3);
   if (myClient.active()==true) fill(0, 255, 0);
-  else{
+  else {
     fill(0);
-    text("reconnect", width-50, 75);
-    if(mouseX>width-170 && mouseX<width-40 && mouseY>40 && mouseY<90){
-      text("?", width-40, 75);
-      if(click==-1){
+    text("reconnect", width-20, 65);
+    if (mouseX>width-140 && mouseX<width-10 && mouseY>30 && mouseY<80) {
+      text("?", width-10, 65);
+      if (click==-1) {
         myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
       }
     }
     fill(255, 0, 0);
   }
-  ellipse(width-50, 50, 20, 20);
+  ellipse(width-20, 40, 20, 20);
 }
 void chkQd(int aorb) {
   int i, j, k, l, m, n, x, y, z, w;

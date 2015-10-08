@@ -1,7 +1,7 @@
 //v0.4.0b2
 //beware for singleAI in ai check time.
 void draw() {
-  
+
   if (myClient.available()>0) recieveServer();
   
   if (escmod == 0) menu();
@@ -61,7 +61,7 @@ void mouseReleased() {
 
 void keyPressed() {
   if (key == TAB) {
-    if (escmod == -1) escmod=gmod;
+    if (escmod == -1) escmod=0;
     else escmod=-1;
   } else if ((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9')) {
     if (loginCache==0&&loginID.length()<8) {
