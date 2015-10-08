@@ -8,12 +8,13 @@ void statM() {
     textSize(120);
     textAlign(CENTER, CENTER);
     text("Quod", width/2, 120);
-    textSize(48+(frameCount%60));
+    textSize(48);
     fill(0);
     textAlign(CENTER, BOTTOM);
     text("click to start", width/2, height-10);
-   
-    fill(0, 3*frameCount%255);
+    
+    if(frameCount>48) frameCount=0;
+    fill(0, (abs(frameCount-25)%26)*10);
     textSize(40);
     textAlign(LEFT, CENTER);
     text("'TAB' to set", 50, 25);

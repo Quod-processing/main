@@ -46,8 +46,6 @@ void settings() {
 }
 
 void setup() {
-println(Runtime.getRuntime().totalMemory());
-println(Runtime.getRuntime().freeMemory());
   
   reader = createReader("setting.txt");
   readText();
