@@ -3,7 +3,7 @@
 void state() {
   //settings
   shape(settingsIcon, 10, 10, 30, 30);
-  if (mouseX<=50 && mouseY<=50) {
+  if (mouseX>0 && mouseX<=50 && mouseY>0 && mouseY<=50) {
     textAlign(LEFT, CENTER);
     textSize(30);
     fill(0);
