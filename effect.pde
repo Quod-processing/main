@@ -1,6 +1,9 @@
 //chkQd : check if there is quod, if yes : 0, no : 1;
 //state
 void state() {
+  //settings
+   shape(settingsIcon, 10, 10, 30, 30);
+  //server state
   textAlign(RIGHT, CENTER);
   textSize(30);
   fill(0);
@@ -10,8 +13,9 @@ void state() {
   if (myClient.active()==true) fill(0, 255, 0);
   else{
     fill(0);
-    text("reconnect?", width-40, 70);
-    if(mouseX>width-170 && mouseX<width-40 && mouseY>40 && mouseY<80){
+    text("reconnect", width-50, 75);
+    if(mouseX>width-170 && mouseX<width-40 && mouseY>40 && mouseY<90){
+      text("?", width-40, 75);
       if(click==-1){
         myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
       }

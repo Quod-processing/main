@@ -4,7 +4,9 @@ import processing.net.*;
 SoundFile sound;
 Client myClient;
 
-PImage License, musicAlbum, mileuIcon ;
+PImage License, musicAlbum, mileuIcon;
+PShape infoIcon, speakerIcon, settingsIcon;
+
 BufferedReader reader;
 String[] Settings = new String[20];
 int dataIn;
@@ -66,6 +68,9 @@ println(Runtime.getRuntime().freeMemory());
   License = loadImage("FONT.png");
   musicAlbum = loadImage("music.jpg");
   mileuIcon = loadImage("mileu.png");
+  infoIcon = loadShape("info.svg");
+  speakerIcon = loadShape("speaker.svg");
+  settingsIcon = loadShape("settings.svg");
   imageMode(CENTER);
 
   //block setting
