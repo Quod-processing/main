@@ -3,25 +3,25 @@
 //menu
 void menu() {
   statemod=0;
-  
+
   //stroke of menu
   noStroke();
   fill(244, 244, 244);
   rect(32, 18, 48, height-36);
   fill(200);
   rect(48, 18, width-87, height-36);
-  
+
   //exit button of menu
   fill(251, 73, 72);
   ellipse(40, 32, 12, 12);
-  if(mouseX>=32 && mouseX<=48 && mouseY>=18 && mouseY <=46){
+  if (mouseX>=32 && mouseX<=48 && mouseY>=18 && mouseY <=46) {
     stroke(0);
     strokeWeight(1);
     line(37, 29, 43, 35);
     line(43, 29, 37, 35);
-    if(click==1||click==-1) escmod=-1; 
+    if (click==1||click==-1) escmod=-1;
   }
-  
+
   //main menu
   noStroke();
   fill(241, 232, 212);
@@ -38,7 +38,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.4.0b3 BUILD25", width/2, 120);
+    text("quod v0.4.0 BUILD26", width/2, 120);
     image(mileuIcon, width/2, 220, 130, 130);
     text("software by mileu, seungwonpark", width/2, 310);
     image(musicAlbum, width/2, 400, 130, 130);
@@ -58,7 +58,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("display", width*3/8+12, 57);
-    
+
     textAlign(LEFT, CENTER);
     text("resolution", 60, 110);
     text(Settings[0], 300, 110);
@@ -79,7 +79,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("sound", width*5/8-12, 57);
-    
+
     textAlign(LEFT, CENTER);
     text("resolution", 60, 110);
     text(Settings[0], 300, 110);
@@ -100,13 +100,13 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("network", width*7/8-36, 57);
-    
+
     textAlign(LEFT, CENTER);
     text("server IP", 80, 130);
     text(Settings[2], 350, 130);
     text("server PORT", 80, 200);
     text(Settings[3], 350, 200);
-    
+
     upmenuButton();
     break;
   }
@@ -162,25 +162,25 @@ void aWin() {
   noStroke();
   rect(0, 0, 248, 640);
   fill(255, 0, 0);
-  text("A win!!", 124, 300);
+
+  if (loginID.equals(" ")) text("A win!!", 124, 300);
+  else {
+    text(loginID + " win!!", 124, 300);
+  }
 
   fill(193, 243, 214);     
   rect(0, 540, 248, 100); 
   textSize(60);
   fill(0);     
   text("Replay?", 124, 590);
-  
+
   fill(193, 243, 214);     
   rect(0, 640, 248, 100); 
   textSize(60);
   fill(0);     
   text("Main Menu", 124, 690);
 
-  if (click==1 && mouseX<248 && mouseY>540 && mouseY<630) {
-    gmod=1;
-    reset();
-  }
-  if (click==1 && mouseX<248 && mouseY>640 && mouseY<730) {
+  if (click==1&&mouseX<248&&mouseY>540) {
     gmod=0;
     reset();
   }
@@ -192,7 +192,10 @@ void bWin() {
   noStroke();
   rect(888, 0, 248, 640);
   fill(0, 0, 255);
-  text("B win!!", 1012, 300);
+  if (enemyID.equals(" ")) text("B win!!", 1012, 300);
+  else {
+    text(enemyID+" wins!!", 1012, 300);
+  }
 
 
   fill(193, 243, 214);     

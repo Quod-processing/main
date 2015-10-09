@@ -70,10 +70,13 @@ void onlP() {
           blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=2;
           lastBlockX=int((mouseX-204)/57);
           lastBlockY=int((mouseY+44)/57);
+          //w+worldID+playerID+action+xcoordinate+ycoordinate
+          myClient.write("w"+":"+"play"+":"+onlineJoinRoom+":"+loginID+":"+"quod"+":"+lastBlockX+":"+lastBlockY+"::");
           turn=2;
           timeA=0;
         } else if (mouseButton == RIGHT&&quazA>0) {
           blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
+          myClient.write("w"+":"+"play"+":"+onlineJoinRoom+":"+loginID+":"+"quaz"+":"+int((mouseX-204)/57)+":"+int((mouseY+44)/57)+"::");
           quazA-=1;
         }
       }
@@ -82,6 +85,7 @@ void onlP() {
     //say there is quod
     if (click==1&&mouseX<248&&mouseY>540) {
       chkQd(0);
+      myClient.write("w"+":"+"play"+":"+onlineJoinRoom+":"+loginID+":"+"squd"+":"+1+":"+1+"::");
       quazA-=1;
       turn=1;
       timeA=0;
@@ -116,6 +120,7 @@ void onlP() {
     {
 
       chkQd(0);
+      myClient.write("w"+":"+"play"+":"+onlineJoinRoom+":"+loginID+":"+"squd"+":"+1+":"+1+"::");
       turn=1;
       quazA-=1;
       timeA=0;
@@ -185,15 +190,31 @@ void onlP() {
 
 
     //mouse click check
+    if (lastEnemyAction == 1) {//quod
+      lastBlockX = enemyBlkX;
+      lastBlockY = enemyBlkY;
+      blk[lastBlockX][lastBlockY] = 3;
+      lastEnemyAction = 0;
+      turn=3;
+      timeB=0;
+    } else if (lastEnemyAction == 2) { //quaz
+      quazB-=1;
+      blk[enemyBlkX][enemyBlkY] = 0;
+      lastEnemyAction = 0;
+    } else if (lastEnemyAction == 3) {//say there is quod
+      chkQd(1);
+      lastEnemyAction = 0;
+      quazB-=1;
+      turn=0;
+      timeB=0;
+    }
 
-    //say there is quod
- 
+
     //time end check
     if (timeB<-3000) {
       turn=0; // turn A end for tiem limit
       timeB=0;
     }
-    
   } else if (turn==3) {
     timeB-=60/frameRate;
     float scdB = map(timeB, 0, 250, 0, TWO_PI) - HALF_PI; // 100 is max
@@ -213,12 +234,17 @@ void onlP() {
     text("finish", 1012, 590);
 
     //say there is quod
-    
+    if (lastEnemyAction == 3) {//say there is quod
+      chkQd(1);
+      lastEnemyAction = 0;
+      quazB-=1;
+      turn = 0;
+      timeB=0;
+    }
     //end of time limit
     if (timeB<-250) {
-      turn=4; // turn A end for tiem limit
+      turn=0; // turn A end for tiem limit
       timeB=0;
     }
   }
-
 }

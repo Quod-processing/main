@@ -31,11 +31,14 @@ int lastBlockX, lastBlockY;// say what was last block
 
 String loginID=" ", loginPD=" ", DeviceID=" ";
 String enemyID=" ";
+int lastEnemyAction = 0; //0 default, 1 is quod, 2 is quaz, 3 is say quod(squd)
+int enemyBlkX=0, enemyBlkY=0; //x, y coordinate of enemy;
+
 int loginCache=-1;
 int loginCacheSmall=0;
 int invalidIDPD=0;
 int worldValid=333333;
-int roomRequested = 0; //0 is none, 1 is yes
+int roomRequested = 0; //0 is none, 1 is yes, 2 is client is playing
 int onlineJoinRoom = 0; //0 is none, room 1~6
 
 int click, clicked;
@@ -59,7 +62,7 @@ void setup() {
 //  sound = new SoundFile(this, "music.mp3");
 //  sound.loop();
 //  sound.amp((float)parseInt(Settings[4])/100);
-  surface.setTitle("quod v0.4.0b3");
+  surface.setTitle("quod v0.4.0");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);
