@@ -27,10 +27,16 @@ void onL() {
         }
       } else if (mouseY>380&&mouseY<450) {
         rect(width/2-140, 380, 280, 70);
+                  fill(255, 0, 0);
+          textAlign(CENTER, CENTER);
+          textSize(24);
+          text("sign up is not supported", width/2, 415);
+        /*  
         if (click==1) {
           gmod=4;
           click=0;
         }
+        */
       } else if (mouseY>460&&mouseY<530) {
         rect(width/2-140, 460, 280, 70);
         if (click==1) {

@@ -1,4 +1,4 @@
-//v0.4.0b2
+//v0.4.0b3
 //beware for singleAI in ai check time.
 void draw() {
 
@@ -19,15 +19,15 @@ void draw() {
     break;
 
   case 3:
-    onlL(); // ?
+    onlL(); // online login
     break;
 
   case -3:
-    onlLR(); // ?
+    onlLR(); // online login request to server
     break;
 
   case 10:
-    onlLVSBefore(); // ?
+    onlLVSBefore(); // online play with others before for waiting
     break;
 
   case 4:
