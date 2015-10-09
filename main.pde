@@ -3,7 +3,7 @@
 void draw() {
 
   if (myClient.available()>0) recieveServer();
-  
+
   if (escmod == 0) menu();
   else switch(gmod) {
   case 0:
@@ -34,6 +34,10 @@ void draw() {
     onlS(); // ?
     break;
 
+  case -4:
+    onlP(); //online play
+    break;
+
   case 5:
     aWin(); // a win
     break;
@@ -41,7 +45,7 @@ void draw() {
   case 6:
     bWin(); // b win
     break;
-    
+
   case 7:
     help(); // help
     break;
@@ -111,7 +115,15 @@ void recieveServer() {
     }
     //end login
     //world join available
-    if (lineCache[0].equals("w")) worldValid=parseInt(lineCache[1]);
+    if (lineCache[0].equals("w")) {
+      if (lineCache[1].equals("start")) {
+        if (lineCache[2].equals(loginID) || lineCache[3].equals(loginID)) {
+          if (lineCache[2].equals(loginID)) enemyID=lineCache[3];
+          else enemyID=lineCache[2];
+          gmod=-4;
+        }
+      } else worldValid=parseInt(lineCache[1]);
+    }
     //world join available end
   }
 }

@@ -7,7 +7,7 @@ void onlP() {
   fill(255, 0, 0);
   textSize(48);
   textAlign(CENTER, CENTER);
-  text("A", 124, 40);
+  text(loginID, 124, 40);
 
   //timepannel
   fill(240, 248, 255);
@@ -132,7 +132,7 @@ void onlP() {
   //blue, playerB
   fill(0, 0, 255);
   textSize(48);
-  text("B", 1012, 40);
+  text(enemyID, 1012, 40);
   fill(240, 248, 255);
   noStroke();
   ellipse(timeBx, timeBy, 100, 100);

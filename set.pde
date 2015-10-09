@@ -30,10 +30,13 @@ int quazA, quazB;//quazer left of player A, B
 int lastBlockX, lastBlockY;// say what was last block
 
 String loginID=" ", loginPD=" ", DeviceID=" ";
+String enemyID=" ";
 int loginCache=-1;
 int loginCacheSmall=0;
 int invalidIDPD=0;
 int worldValid=333333;
+int roomRequested = 0; //0 is none, 1 is yes
+int onlineJoinRoom = 0; //0 is none, room 1~6
 
 int click, clicked;
 PFont font;
