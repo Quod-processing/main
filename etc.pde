@@ -13,7 +13,7 @@ void menu() {
   
   //exit button of menu
   fill(251, 73, 72);
-  ellipse(40, 32, 10, 10);
+  ellipse(40, 32, 12, 12);
   if(mouseX>=32 && mouseX<=48 && mouseY>=18 && mouseY <=46){
     stroke(0);
     strokeWeight(1);

@@ -16,7 +16,7 @@ void onL() {
     textSize(48);
     text("Log in", width/2, 335);
     text("Sign up", width/2, 415);
-    text("Option", width/2, 495);
+    text("Back", width/2, 495);
     if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
       fill(241, 232, 212);
       if (mouseY>300&&mouseY<370) {
@@ -33,6 +33,11 @@ void onL() {
         }
       } else if (mouseY>460&&mouseY<530) {
         rect(width/2-140, 460, 280, 70);
+        if (click==1) {
+          gmod=0;
+          click=0;
+          clicked=2;
+        }
       }
     }
   }
