@@ -3,9 +3,27 @@
 //menu
 void menu() {
   statemod=0;
+  
+  //stroke of menu
   noStroke();
-  fill(230, 158, 122);
-  rect(32, 18, width-64, height-36);
+  fill(244, 244, 244);
+  rect(32, 18, 48, height-36);
+  fill(200);
+  rect(48, 18, width-87, height-36);
+  
+  //exit button of menu
+  fill(251, 73, 72);
+  ellipse(40, 32, 10, 10);
+  if(mouseX>=32 && mouseX<=48 && mouseY>=18 && mouseY <=46){
+    stroke(0);
+    strokeWeight(1);
+    line(37, 29, 43, 35);
+    line(43, 29, 37, 35);
+    if(click==1||click==-1) escmod=-1; 
+  }
+  
+  //main menu
+  noStroke();
   fill(241, 232, 212);
   rect(48, 27, width-96, height-54);
   switch(menuKind) {
