@@ -12,8 +12,8 @@ void statM() {
     fill(0);
     textAlign(CENTER, BOTTOM);
     text("click to start", width/2, height-10);
-    
-    if(frameCount>48) frameCount=0;
+
+    if (frameCount>48) frameCount=0;
     fill(0, (abs(frameCount-25)%26)*10);
     textSize(40);
     textAlign(LEFT, CENTER);
@@ -50,10 +50,13 @@ void statM() {
       } else if (mouseY>380&&mouseY<450) { // Online Play
         rect(width/2-140, 380, 280, 70);
         if (myClient.active()==false) {
-          fill(255, 0, 0);
-          textAlign(CENTER, CENTER);
-          textSize(24);
-          text("server connection fail", width/2, 415);
+          myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
+          if (myClient.active()==false) {
+            fill(255, 0, 0);
+            textAlign(CENTER, CENTER);
+            textSize(24);
+            text("server connection fail", width/2, 415);
+          }
         } else if (click==-1) {
           gmod=2;
           click=0;

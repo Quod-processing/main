@@ -59,9 +59,9 @@ void setup() {
   surface.setSize(parseInt(Settings[0]),parseInt(Settings[1]));
   
   myClient = new Client(this, Settings[2], parseInt(Settings[3]));//tcp port
-//  sound = new SoundFile(this, "music.mp3");
-//  sound.loop();
-//  sound.amp((float)parseInt(Settings[4])/100);
+  sound = new SoundFile(this, "music.mp3");
+  sound.loop();
+  sound.amp((float)parseInt(Settings[4])/100);
   surface.setTitle("quod v0.4.0");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
