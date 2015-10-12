@@ -99,7 +99,13 @@ void recieveServer() {
     if (loginCache==3) {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {
-          myClient.write("2"+":"+DeviceID+":"+loginID+":"+loginPD+"::");
+          byte[] md5hash = messageDigest5(loginPD,"MD5");
+          String md5string="";
+          String md5="";
+          for(int imd5=0; imd5<md5hash.length; imd5++) md5string+=(hex(md5hash[imd5],2));
+          md5=md5string.toLowerCase();
+          println(md5);
+          myClient.write("2"+":"+DeviceID+":"+loginID+":"+md5+"::");
         }
       } else if (lineCache[0].equals("2")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {
