@@ -1,6 +1,6 @@
 //i said udp but it is just server connect
 void onL() {
-
+  statemod=1;
   if (clicked>0) {
     background(184, 241, 241);
     textSize(120);
@@ -52,7 +52,7 @@ void onL() {
 void onlL() {
 
   loginCache=-1;
-
+  statemod=1;
   if (clicked>1) {
 
     background(184, 241, 241);
@@ -131,7 +131,8 @@ void onlS() {
 }
 
 void onlLVSBefore() {
-
+  statemod=1;
+cursor(ARROW);
   background(184, 241, 241);
   textSize(120);
   noStroke();

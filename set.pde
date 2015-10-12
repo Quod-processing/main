@@ -62,7 +62,7 @@ void setup() {
   sound = new SoundFile(this, "music.mp3");
   sound.loop();
   sound.amp((float)parseInt(Settings[4])/100);
-  surface.setTitle("quod v0.4.0");
+  surface.setTitle("quod v0.4.1");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);
