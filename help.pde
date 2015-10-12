@@ -6,6 +6,8 @@ void help(){
     fill(23, 93, 126);
     textAlign(CENTER, CENTER);
     text("Text", width/2, 200);
+    textSize(70);
+    text("visit 'mileu.ml'", width/2, 350);
     fill(255, 206, 160);
     rect(width/2-140, 460, 280, 70);
     fill(0);
