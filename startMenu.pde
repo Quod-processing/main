@@ -2,6 +2,8 @@
 //loadS : load screne
 
 void loadS1() {
+  statemod=1;
+
   background(184, 241, 241);
   fill(23, 93, 126);
   textSize(120);
@@ -16,6 +18,7 @@ void loadS1() {
   gmod = -gmod;
 }
 void loadS2() {
+  statemod=1;
 
   noStroke();
   fill(184, 241, 241);
@@ -54,6 +57,7 @@ void statM1() {
 }
 
 void statM2() {
+  statemod=1;
   noStroke();
   textAlign(CENTER, CENTER);
   fill(255, 206, 160);
@@ -70,7 +74,7 @@ void statM2() {
     if (mouseY>300&&mouseY<370) { // Local Play
       rect(width/2-140, 300, 280, 70);
       if (click==1) {
-        gmod=1;
+        gmod=-300;
         click=0;
       }
     } else if (mouseY>380&&mouseY<450) { // Online Play

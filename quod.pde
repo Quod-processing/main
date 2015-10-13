@@ -2,32 +2,43 @@
 //beware for singleAI in ai check time.
 void draw() {
   println("frameRate : "+frameRate);
-  println("X : "+mouseX+" Y : "+mouseY);
+
   println("gmod : "+gmod);
   if (myClient.available()>0) recieveServer();
 
   if (escmod == 0) menu();
   else switch(gmod) {
+    
   case -100:
     loadS1();
-    break;
-
   case 100:
     loadS2();
     break;
 
   case -200:
     statM1(); // start menu
-    break;
-
   case 200:
     statM2();
     break;
 
-  case 1:
-    snglP(); // singlePlay
+  case -300:
+    snglP1(); // singlePlay
+  case 300:
+    snglP2(); // singlePlay
+    break;
+    
+  case -400:
+    snglPai1();
+  case 400:
+    snglPai2();
     break;
 
+  case -500:
+    snglPvs1();    
+  case 500:
+    snglPvs2();
+    break;
+    
   case 2:
     onL(); // onlinePlay
     break;

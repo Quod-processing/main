@@ -2,13 +2,16 @@
 //state
 void state() {
   //settings
+  noStroke();
+  fill(184, 241, 241);
+  rect(1000, 25, 136, 60);
   shape(settingsIcon, 10, 10, 30, 30);
   if (mouseX>0 && mouseX<=50 && mouseY>0 && mouseY<=50) {
     textAlign(LEFT, CENTER);
     textSize(30);
     fill(0);
     text("settings", 50, 25);
-    if (click==1||click==-1) escmod = 0;
+    if (click==1) escmod = 0;
   }
 
   //server state
@@ -24,7 +27,7 @@ void state() {
     text("reconnect", width-20, 65);
     if (mouseX>width-140 && mouseX<width-10 && mouseY>30 && mouseY<80) {
       text("?", width-10, 65);
-      if (click==-1) {
+      if (click==1) {
         myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
       }
     }

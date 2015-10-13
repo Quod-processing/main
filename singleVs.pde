@@ -1,6 +1,6 @@
 //snglPvs() single play 1 vs 1 in one computer
 
-void snglPvs() {
+void snglPvs1() {
 
   background(184, 241, 241);
   showBlock();
@@ -245,4 +245,7 @@ void snglPvs() {
       timeB=0;
     }
   }
+}
+
+void snglPvs2() {
 }
