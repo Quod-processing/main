@@ -10,7 +10,7 @@ PShape infoIcon, speakerIcon, settingsIcon;
 BufferedReader reader;
 String[] Settings = new String[20];
 int dataIn;
-    
+
 
 int gmod, turn;// game mode, 0:startmenu, 1:single, 2:UDP, 3:udp server, 4:udp client, 5:A win, 6:B win, turn is play turn 0:A(ai), 1:B(ai), 2: A after do his color block(ai), 3 : B after do his color block(ai) 4:A(1vs1), 5:B(1vs1), 6: A after do his color block(1vs1), 7 : B after do his color block(1vs1)
 int escmod = -1;//help, option, menu
@@ -41,7 +41,7 @@ int worldValid=333333;
 int roomRequested = 0; //0 is none, 1 is yes, 2 is client is playing
 int onlineJoinRoom = 0; //0 is none, room 1~6
 
-int click, clicked;
+int click;
 PFont font;
 
 
@@ -52,17 +52,17 @@ void settings() {
 }
 
 void setup() {
-  
+
   reader = createReader("setting.txt");
   readText();
   indexText();
-  surface.setSize(parseInt(Settings[0]),parseInt(Settings[1]));
-  
+  surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
+
   myClient = new Client(this, Settings[2], parseInt(Settings[3]));//tcp port
   sound = new SoundFile(this, "music.mp3");
   sound.loop();
   sound.amp((float)parseInt(Settings[4])/100);
-  surface.setTitle("quod v0.4.1");
+  surface.setTitle("quod v0.5.0");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);
@@ -100,6 +100,6 @@ void setup() {
   quazA=6;
   quazB=6;
   click=0;
-  gmod=0;
+  gmod=-100;
   turn=-1;
 }

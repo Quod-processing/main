@@ -39,7 +39,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.4.1b1 BUILD30", width/2, 120);
+    text("quod v0.5.0b1 BUILD31", width/2, 120);
     image(mileuIcon, width/2, 220, 130, 130);
     text("software by mileu, seungwonpark", width/2, 310);
     image(musicAlbum, width/2, 400, 130, 130);
@@ -182,7 +182,7 @@ void aWin() {
   text("Main Menu", 124, 690);
 
   if (click==1&&mouseX<248&&mouseY>540) {
-    gmod=0;
+    gmod=-200;
     reset();
   }
 }
@@ -206,7 +206,7 @@ void bWin() {
   text("Replay?", 1012, 590);
 
   if (click==1&&mouseX>888&&mouseY>540) {
-    gmod=0;
+    gmod=-200;
     reset();
   }
 }
@@ -236,7 +236,7 @@ void reset() {
   quazA=6;
   quazB=6;
   click=0;
-  gmod=0;
+  gmod=-200;
   turn=-1;
 }
 
@@ -268,10 +268,11 @@ void indexText() {
 
 byte[] messageDigest5(String message, String algorithm) {
   try {
-  java.security.MessageDigest md = java.security.MessageDigest.getInstance(algorithm);
-  md.update(message.getBytes());
-  return md.digest();
-  } catch(java.security.NoSuchAlgorithmException e) {
+    java.security.MessageDigest md = java.security.MessageDigest.getInstance(algorithm);
+    md.update(message.getBytes());
+    return md.digest();
+  } 
+  catch(java.security.NoSuchAlgorithmException e) {
     println(e.getMessage());
     return null;
   }

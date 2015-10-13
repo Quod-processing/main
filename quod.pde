@@ -1,13 +1,27 @@
-//v0.4.1
+//v0.5.0
 //beware for singleAI in ai check time.
 void draw() {
-
+  println("frameRate : "+frameRate);
+  println("X : "+mouseX+" Y : "+mouseY);
+  println("gmod : "+gmod);
   if (myClient.available()>0) recieveServer();
 
   if (escmod == 0) menu();
   else switch(gmod) {
-  case 0:
-    statM(); // start menu
+  case -100:
+    loadS1();
+    break;
+
+  case 100:
+    loadS2();
+    break;
+
+  case -200:
+    statM1(); // start menu
+    break;
+
+  case 200:
+    statM2();
     break;
 
   case 1:
@@ -56,11 +70,7 @@ void draw() {
 }
 
 void mouseReleased() {
-  if (escmod==0) click=1;
-  else if (clicked==1) click=-1;
-  else click=1;
-
-  clicked+=1;
+  click = 1;
 }
 
 void keyPressed() {
@@ -99,10 +109,10 @@ void recieveServer() {
     if (loginCache==3) {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {
-          byte[] md5hash = messageDigest5(loginPD,"MD5");
+          byte[] md5hash = messageDigest5(loginPD, "MD5");
           String md5string="";
           String md5="";
-          for(int imd5=0; imd5<md5hash.length; imd5++) md5string+=(hex(md5hash[imd5],2));
+          for (int imd5=0; imd5<md5hash.length; imd5++) md5string+=(hex(md5hash[imd5], 2));
           md5=md5string.toLowerCase();
           println(md5);
           myClient.write("2"+":"+DeviceID+":"+loginID+":"+md5+"::");
@@ -138,7 +148,7 @@ void recieveServer() {
           statemod=0;
           gmod=-4;
         }
-        
+
         //w+play+worldID+playerID+action+xcoordinate+ycoordinate
       } else if (lineCache[1].equals("play")&&parseInt(lineCache[2])==onlineJoinRoom) {
         if (lineCache[3].equals(enemyID)) {

@@ -8,9 +8,9 @@ void state() {
     textSize(30);
     fill(0);
     text("settings", 50, 25);
-    if(click==1||click==-1) escmod = 0;
+    if (click==1||click==-1) escmod = 0;
   }
-  
+
   //server state
   textAlign(RIGHT, CENTER);
   textSize(30);
