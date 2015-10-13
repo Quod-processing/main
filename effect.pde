@@ -35,6 +35,7 @@ void state() {
   }
   ellipse(width-20, 40, 20, 20);
 }
+
 void chkQd(int aorb) {
   int i, j, k, l, m, n, x, y, z, w;
   int round=0;
@@ -79,7 +80,8 @@ void chkQd(int aorb) {
                 line(226+k*57, -22+l*57, 226+(l+k-j)*57, -22+(l-k+i)*57);
                 line(226+(l+k-j)*57, -22+(l-k+i)*57, 226+(i-j+l)*57, -22+(i+j-k)*57);
                 line(226+(i-j+l)*57, -22+(i+j-k)*57, 226+i*57, -22+j*57);
-                gmod=aorb+5;//it ends here
+                if(aorb == 0) gmod = 1000;
+                else gmod = 2000;
               }
             }
           }
@@ -100,7 +102,8 @@ void chkQd(int aorb) {
                 line(226+k*57, -22+l*57, 226+(l+k-j)*57, -22+(l-k+i)*57);
                 line(226+(l+k-j)*57, -22+(l-k+i)*57, 226+(i-j+l)*57, -22+(i+j-k)*57);
                 line(226+(i-j+l)*57, -22+(i+j-k)*57, 226+i*57, -22+j*57);
-                gmod=aorb+5;//it ends here, 5:A win, 6:B win
+                if(aorb == 0) gmod = 1000;
+                else gmod = 2000;
               }
             }
           }

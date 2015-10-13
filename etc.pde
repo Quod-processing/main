@@ -20,7 +20,10 @@ void menu() {
     strokeWeight(1);
     line(37, 29, 43, 35);
     line(43, 29, 37, 35);
-    if (click==1) escmod=-1;
+    if (click==1) {
+      escmod=-1;
+      gmod = -gmod;
+    }
   }
 
   //main menu
@@ -39,11 +42,11 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.5.0b1 BUILD32", width/2, 120);
-    image(mileuIcon, width/2, 220, 130, 130);
-    text("software by mileu, seungwonpark", width/2, 310);
-    image(musicAlbum, width/2, 400, 130, 130);
-    text("OST by Lepellec dominique", width/2, 490);
+    text("quod v0.5.0b1 BUILD33", width/2, 120);
+    image(mileuIcon, width/2, 240, 130, 130);
+    text("software by mileu, seungwonpark", width/2, 350);
+    image(musicAlbum, width/2, 460, 130, 130);
+    text("OST by Lepellec dominique", width/2, 570);
     upmenuButton();
     break;
 

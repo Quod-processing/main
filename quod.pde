@@ -62,12 +62,14 @@ void draw() {
   case -4:
     onlP(); //online play
     break;
-
-  case 5:
+    
+  case -1000:
+  case 1000:
     aWin(); // a win
     break;
-
-  case 6:
+    
+  case -2000:
+  case 2000:
     bWin(); // b win
     break;
 
@@ -87,7 +89,10 @@ void mouseReleased() {
 void keyPressed() {
   if (key == TAB) {
     if (escmod == -1) escmod=0;
-    else escmod=-1;
+    else {
+      escmod=-1;
+      gmod = -gmod;
+    }
   } else if ((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9')) {
     if (loginCache==0&&loginID.length()<8) {
       loginID = loginID + key;
