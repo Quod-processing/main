@@ -94,7 +94,7 @@ void statM2() {
     } else if (mouseY>460&&mouseY<530) { // Help
       rect(width/2-140, 460, 280, 70);
       if (click==1) {
-        gmod=7;
+        gmod=3000;
         click=0;
       }
     }

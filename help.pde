@@ -5,7 +5,7 @@ void help() {
   noStroke();
   fill(23, 93, 126);
   textAlign(CENTER, CENTER);
-  text("Text", width/2, 200);
+  text("help", width/2, 200);
   textSize(70);
   text("visit 'mileu.ml'", width/2, 350);
   fill(255, 206, 160);

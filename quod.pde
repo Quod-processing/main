@@ -2,13 +2,13 @@
 //beware for singleAI in ai check time.
 void draw() {
   println("frameRate : "+frameRate);
-
   println("gmod : "+gmod);
+  
   if (myClient.available()>0) recieveServer();
 
   if (escmod == 0) menu();
   else switch(gmod) {
-    
+  
   case -100:
     loadS1();
   case 100:
@@ -73,7 +73,8 @@ void draw() {
     bWin(); // b win
     break;
 
-  case 7:
+  case -3000:
+  case 3000:
     help(); // help
     break;
   }
