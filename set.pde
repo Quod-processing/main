@@ -4,7 +4,7 @@ import processing.net.*;
 SoundFile sound;
 Client myClient;
 
-PImage License, musicAlbum, mileuIcon;
+PImage musicAlbum, mileuIcon;
 PShape infoIcon, speakerIcon, settingsIcon;
 
 BufferedReader reader;
@@ -69,7 +69,6 @@ void setup() {
   textAlign(CENTER, CENTER);
   smooth();
   frameRate(60);
-  License = loadImage("FONT.png");
   musicAlbum = loadImage("music.jpg");
   mileuIcon = loadImage("mileu.png");
   infoIcon = loadShape("info.svg");

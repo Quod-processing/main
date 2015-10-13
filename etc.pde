@@ -44,7 +44,6 @@ void menu() {
     text("software by mileu, seungwonpark", width/2, 310);
     image(musicAlbum, width/2, 400, 130, 130);
     text("OST by Lepellec dominique", width/2, 490);
-    image(License, width/2, 560, 361, 145);
     upmenuButton();
     break;
 
