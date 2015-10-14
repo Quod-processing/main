@@ -1,7 +1,6 @@
 //set, basic settings 
-import processing.sound.*;
-import processing.net.*; 
-SoundFile sound;
+import processing.net.*;
+
 Client myClient;
 
 PImage musicAlbum, mileuIcon;
@@ -14,6 +13,7 @@ int dataIn;
 
 int gmod, turn;// game mode, 0:startmenu, 1:single, 2:UDP, 3:udp server, 4:udp client, 5:A win, 6:B win, turn is play turn 0:A(ai), 1:B(ai), 2: A after do his color block(ai), 3 : B after do his color block(ai) 4:A(1vs1), 5:B(1vs1), 6: A after do his color block(1vs1), 7 : B after do his color block(1vs1)
 int escmod = -1;//help, option, menu
+int inputmod = -1;//keyboard input mod
 int menuKind = 0;
 int statemod = 1;//server state, etc..
 int aiTurn = -1;//check if ai will work or not
@@ -59,9 +59,6 @@ void setup() {
   surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
 
   myClient = new Client(this, Settings[2], parseInt(Settings[3]));//tcp port
-  sound = new SoundFile(this, "music.mp3");
-  sound.loop();
-  sound.amp((float)parseInt(Settings[4])/100);
   surface.setTitle("quod v0.5.0");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");

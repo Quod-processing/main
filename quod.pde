@@ -3,6 +3,9 @@
 void draw() {
   println("frameRate : "+frameRate);
   println("gmod : "+gmod);
+  println("X : "+mouseX+" Y : "+mouseY);
+  
+  inputmod = -1;
   
   if (myClient.available()>0) recieveServer();
 
@@ -55,12 +58,12 @@ void draw() {
     onlLVSBefore(); // online play with others before for waiting
     break;
 
-  case 4:
-    onlS(); // ?
-    break;
 
-  case -4:
-    onlP(); //online play
+  case -900:
+    onlPvs1(); //online play
+    break;
+      case 900:
+    onlPvs2(); //online play
     break;
     
   case -1000:
@@ -94,7 +97,10 @@ void keyPressed() {
       escmod=-1;
       gmod = -gmod;
     }
-  } else if ((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9')) {
+  } else if ((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9') || key == '.') {
+    if (inputmod == 4010){
+      Settings[2] = Settings[2] + key;
+    }
     if (loginCache==0&&loginID.length()<8) {
       loginID = loginID + key;
       loginID = trim(loginID);
@@ -109,6 +115,7 @@ void keyPressed() {
       click=0;
     }
   } else if (key == DELETE||key == BACKSPACE) {
+    if (inputmod == 4010 && Settings[2].length()>0) Settings[2] = Settings[2].substring(0, Settings[2].length()-1);
     if (loginCache==0&&loginID.length()>0) loginID = loginID.substring(0, loginID.length()-1);
     if (loginCache==1&&loginPD.length()>0) loginPD = loginPD.substring(0, loginPD.length()-1);
   }
@@ -163,7 +170,7 @@ void recieveServer() {
           onlineJoinRoom = parseInt(lineCache[2]);
           roomRequested = 2;
           statemod=0;
-          gmod=-4;
+          gmod=-900;
         }
 
         //w+play+worldID+playerID+action+xcoordinate+ycoordinate

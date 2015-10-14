@@ -1,5 +1,5 @@
 //i said udp but it is just server connect
-void onlP() {
+void onlPvs1() {
   background(184, 241, 241);
   showBlock();
 
@@ -247,4 +247,7 @@ void onlP() {
       timeB=0;
     }
   }
+}
+
+void onlPvs2() {
 }

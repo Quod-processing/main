@@ -124,9 +124,6 @@ void onlLR() {
   }
 }
 
-void onlS() {
-}
-
 void onlLVSBefore() {
   statemod=1;
   cursor(ARROW);
@@ -311,7 +308,7 @@ void onlLVSBefore() {
         roomRequested = 1;
       }
     }
-  } else if ((worldValid/pow(10, onlineJoinRoom-1))%10==3) gmod=-4;
+  } else if ((worldValid/pow(10, onlineJoinRoom-1))%10==3) gmod=-900;
 
   textSize(48);
   textAlign(LEFT, CENTER);

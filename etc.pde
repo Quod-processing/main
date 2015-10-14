@@ -42,7 +42,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.5.0b1 BUILD34", width/2, 120);
+    text("quod v0.5.0b1 BUILD35", width/2, 120);
     image(mileuIcon, width/2, 240, 130, 130);
     text("software by mileu, seungwonpark", width/2, 350);
     image(musicAlbum, width/2, 460, 130, 130);
@@ -109,6 +109,15 @@ void menu() {
     text(Settings[2], 350, 130);
     text("server PORT", 80, 200);
     text(Settings[3], 350, 200);
+
+    if (mouseX > 340&& mouseX < 500 && mouseY > 110 && mouseY < 160) {
+      fill(241, 232, 212);
+      rect(340, 110, 160, 50);
+      fill(255, 0, 0);
+      textAlign(LEFT, CENTER);
+      text(Settings[2], 350, 130);
+      inputmod = 4010;
+    }
 
     upmenuButton();
     break;
