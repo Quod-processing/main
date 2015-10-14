@@ -2,6 +2,7 @@
 //showBlock : show gameboard
 //menu
 //md5
+//help
 void menu() {
   statemod=0;
 
@@ -42,11 +43,10 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.5.0b1 BUILD36", width/2, 120);
+    text("quod v0.5.0b1 BUILD37", width/2, 120);
     image(mileuIcon, width/2, 240, 130, 130);
     text("software by mileu, seungwonpark", width/2, 350);
-    image(musicAlbum, width/2, 460, 130, 130);
-    text("OST by Lepellec dominique", width/2, 570);
+    text("visit 'mileu.ml' for more information", width/2, 500);
     upmenuButton();
     break;
 
@@ -276,7 +276,7 @@ void indexText() {
     i++;
   }
 }
-
+//md5
 byte[] messageDigest5(String message, String algorithm) {
   try {
     java.security.MessageDigest md = java.security.MessageDigest.getInstance(algorithm);
@@ -287,4 +287,32 @@ byte[] messageDigest5(String message, String algorithm) {
     println(e.getMessage());
     return null;
   }
-} 
+}
+
+void help() {
+
+  background(184, 241, 241);
+  textSize(120);
+  noStroke();
+  fill(23, 93, 126);
+  textAlign(CENTER, CENTER);
+  text("help", width/2, 200);
+  textSize(70);
+  text("visit 'mileu.ml'", width/2, 350);
+  fill(255, 206, 160);
+  rect(width/2-140, 460, 280, 70);
+  fill(0);
+  textSize(48);
+  textAlign(CENTER, CENTER);
+  text("Back", width/2, 495);
+  if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
+    fill(241, 232, 212);
+    if (mouseY>460&&mouseY<530) {
+      rect(width/2-140, 460, 280, 70);
+      if (click==1) {
+        gmod=-200;
+        click=0;
+      }
+    }
+  }
+}

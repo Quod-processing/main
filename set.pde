@@ -3,7 +3,7 @@ import processing.net.*;
 
 Client myClient;
 
-PImage musicAlbum, mileuIcon;
+PImage mileuIcon;
 PShape infoIcon, speakerIcon, settingsIcon;
 
 BufferedReader reader;
@@ -66,7 +66,6 @@ void setup() {
   textAlign(CENTER, CENTER);
   smooth();
   frameRate(60);
-  musicAlbum = loadImage("music.jpg");
   mileuIcon = loadImage("mileu.png");
   infoIcon = loadShape("info.svg");
   speakerIcon = loadShape("speaker.svg");

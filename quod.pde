@@ -13,7 +13,7 @@ void draw() {
   else switch(gmod) {
 
   case -100:
-    loadS1();
+    loadS1(); // loading screne, "click to start"
   case 100:
     loadS2();
     break;
@@ -27,36 +27,45 @@ void draw() {
   case -300:
     snglP1(); // singlePlay
   case 300:
-    snglP2(); // singlePlay
+    snglP2();
     break;
 
   case -400:
-    snglPai1();
+    snglPai1(); // single Play ai
   case 400:
     snglPai2();
     break;
 
   case -500:
-    snglPvs1();    
+    snglPvs1(); // single Play 1 vs 1 
   case 500:
     snglPvs2();
     break;
 
-  case -2:
-  case 2:
-    onL(); // onlinePlay
+  case -600:
+    onlP1(); // onlinePlay
+  case 600:
+    onlP2();
     break;
 
-  case 3:
-    onlL(); // online login
+  case -700:
+    onlPL1(); // online login
+  case 700:
+    onlPL2();
+    break;
+    
+  case -800:
+    onlPS1(); // online signup
+  case 800:
+    onlPS2();
     break;
 
   case -3:
     onlLR(); // online login request to server
     break;
 
-  case -10:
-  case 10:
+  case -750:
+  case 750:
     onlLVSBefore(); // online play with others before for waiting
     break;
 
@@ -145,10 +154,10 @@ void recieveServer() {
       } else if (lineCache[0].equals("2")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {
           loginCache=4;
-          gmod=10;
+          gmod = -750;
         } else {
           loginCache=-1;
-          gmod=3;
+          gmod = -700;
           invalidIDPD=1;
         }
       }

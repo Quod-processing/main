@@ -88,7 +88,7 @@ void statM2() {
           text("server connection fail", width/2, 415);
         }
       } else if (click==1) {
-        gmod=2;
+        gmod = -600;
         click=0;
       }
     } else if (mouseY>460&&mouseY<530) { // Help
