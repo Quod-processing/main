@@ -4,14 +4,14 @@ void draw() {
   println("frameRate : "+frameRate);
   println("gmod : "+gmod);
   println("X : "+mouseX+" Y : "+mouseY);
-  
+
   inputmod = -1;
-  
+
   if (myClient.available()>0) recieveServer();
 
   if (escmod == 0) menu();
   else switch(gmod) {
-  
+
   case -100:
     loadS1();
   case 100:
@@ -29,7 +29,7 @@ void draw() {
   case 300:
     snglP2(); // singlePlay
     break;
-    
+
   case -400:
     snglPai1();
   case 400:
@@ -41,7 +41,8 @@ void draw() {
   case 500:
     snglPvs2();
     break;
-    
+
+  case -2:
   case 2:
     onL(); // onlinePlay
     break;
@@ -54,6 +55,7 @@ void draw() {
     onlLR(); // online login request to server
     break;
 
+  case -10:
   case 10:
     onlLVSBefore(); // online play with others before for waiting
     break;
@@ -61,16 +63,15 @@ void draw() {
 
   case -900:
     onlPvs1(); //online play
-    break;
-      case 900:
+  case 900:
     onlPvs2(); //online play
     break;
-    
+
   case -1000:
   case 1000:
     aWin(); // a win
     break;
-    
+
   case -2000:
   case 2000:
     bWin(); // b win
@@ -98,7 +99,7 @@ void keyPressed() {
       gmod = -gmod;
     }
   } else if ((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9') || key == '.') {
-    if (inputmod == 4010){
+    if (inputmod == 4010) {
       Settings[2] = Settings[2] + key;
     }
     if (loginCache==0&&loginID.length()<8) {
