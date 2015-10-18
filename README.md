@@ -9,5 +9,4 @@ Main code for Quod client
 Install Processing sound Libraries at sketch - Import Libraries - Add Libraries **Sound**
 
 ## Programing info
-(The image below is self-deployed. No need to additionally update)
 <img src="https://raw.githubusercontent.com/Quod-processing/main/master/programing%20info/program%20info.png" height="700px">
