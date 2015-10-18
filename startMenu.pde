@@ -79,13 +79,15 @@ void statM2() {
       }
     } else if (mouseY>380&&mouseY<450) { // Online Play
       rect(width/2-140, 380, 280, 70);
+
       if (myClient.active()==false) {
-        myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
-        if (myClient.active()==false) {
-          fill(255, 0, 0);
-          textAlign(CENTER, CENTER);
-          textSize(24);
-          text("server connection fail", width/2, 415);
+        fill(255, 0, 0);
+        textAlign(CENTER, CENTER);
+        textSize(24);
+        text("server connection fail", width/2, 415);
+        if (click == 1) {
+          myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
+          click = 0;
         }
       } else if (click==1) {
         gmod = -600;
