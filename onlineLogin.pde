@@ -42,13 +42,13 @@ void onlPL2() {
       rect(width/2-140, 300, 280, 70);
       fill(0);
       text(loginID, width/2, 335);
-      loginCache=0;
+      inputmod = 710;
     } else if (mouseY>380&&mouseY<450) {
       cursor(TEXT);
       rect(width/2-140, 380, 280, 70);
       fill(0);
       text(loginPD, width/2, 415);
-      loginCache=1;
+      inputmod = 720;
     } else if (mouseY>460&&mouseY<530) {
       rect(width/2-140, 460, 280, 70);
       fill(0);
