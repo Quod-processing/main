@@ -1,3 +1,6 @@
+<img src="https://github.com/Quod-processing/main/blob/master/data/myicon.PNG" height="700px">
+
+--------
 # main
 Main code for Quod client
 - Based on : **Processing 3.0** https://processing.org/download/
