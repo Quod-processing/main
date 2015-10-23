@@ -124,6 +124,11 @@ void onlPvs2() {
   fill(240, 248, 255);
   noStroke();
   ellipse(timeAx, timeAy, 100, 100);
+  
+  //blue, playerB timepannel
+  fill(240, 248, 255);
+  noStroke();
+  ellipse(timeBx, timeBy, 100, 100);
 
   //turn of A
   if (turn == 0) {

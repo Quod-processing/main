@@ -1,5 +1,8 @@
 // online login
 void onlPL1() {
+  gmod = -gmod;
+  
+  
 }
 void onlPL2() {
 

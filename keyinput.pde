@@ -25,7 +25,7 @@ void keyPressed() {
     else if ((key == DELETE||key == BACKSPACE) && Settings[2].length()>0) Settings[2] = Settings[2].substring(0, Settings[2].length()-1);
   }
 
-  if (gmod == 700 || gmod == -700) {
+  if (gmod == 700) {
     if (key==ENTER) {
       loginCache=-1;
       gmod= -3;
