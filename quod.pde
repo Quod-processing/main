@@ -1,9 +1,11 @@
 //v0.5.0
 //beware for singleAI in ai check time.
 void draw() {
-  println("frameRate : "+frameRate);
-  println("gmod : "+gmod);
-  println("X : "+mouseX+" Y : "+mouseY);
+  log.println();
+  log.println(hour()+":"+minute()+":"+second()+"."+millis());
+  log.println("fps : "+frameRate);
+  log.println("gmod : "+gmod);
+  log.println("X : "+mouseX+" Y : "+mouseY);
 
   inputmod = -1;
 
@@ -68,7 +70,6 @@ void draw() {
   case 750:
     onlLVSBefore(); // online play with others before for waiting
     break;
-
 
   case -900:
     onlPvs1(); //online play

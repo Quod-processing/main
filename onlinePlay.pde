@@ -8,6 +8,9 @@ void onlP1() {
   noStroke();
   fill(23, 93, 126);
   text("Quod", width/2, 120);
+  fill(255, 135, 38);
+  textSize(36);
+  text("Online Play", width/2, 170);
   fill(255, 206, 160);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
@@ -44,6 +47,10 @@ void onlP2() {
       textAlign(CENTER, CENTER);
       textSize(24);
       text("sign up is not supported", width/2, 415);
+      if(click == 1) {
+        gmod = -800;
+        click = 0;
+      }
     } else if (mouseY>460&&mouseY<530) {
       rect(width/2-140, 460, 280, 70);
       if (click==1) {

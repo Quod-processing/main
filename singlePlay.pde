@@ -9,6 +9,9 @@ void snglP1() {
   fill(23, 93, 126);
   textAlign(CENTER, CENTER);
   text("Quod", width/2, 120);
+  fill(255, 135, 38);
+  textSize(36);
+  text("Local Play", width/2, 170);
   fill(255, 206, 160);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);

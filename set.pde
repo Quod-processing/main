@@ -7,6 +7,8 @@ PImage mileuIcon;
 PShape infoIcon, speakerIcon, settingsIcon;
 
 BufferedReader reader;
+PrintWriter log;
+
 String[] Settings = new String[20];
 int dataIn;
 
@@ -30,20 +32,20 @@ int quazA, quazB;//quazer left of player A, B
 int lastBlockX, lastBlockY;// say what was last block
 
 String loginID=" ", loginPD=" ", DeviceID=" ";
+String signupID=" ", signupPD=" ", signupPDC=" "; // SignupPDC is check password to avoid typos
 String enemyID=" ";
 int lastEnemyAction = 0; //0 default, 1 is quod, 2 is quaz, 3 is say quod(squd)
 int enemyBlkX=0, enemyBlkY=0; //x, y coordinate of enemy;
 
-int loginCache=-1;
-int loginCacheSmall=0;
-int invalidIDPD=0;
+int loginCache=-1, signupCache=-1;
+int loginCacheSmall=0, signupCacheSmall=0;
+int validIDPDLI=0, validIDPDSU=0; //valid of login and signup id and password
 int worldValid=333333;
 int roomRequested = 0; //0 is none, 1 is yes, 2 is client is playing
 int onlineJoinRoom = 0; //0 is none, room 1~6
 
 int click;
 PFont font;
-
 
 void settings() {
 
@@ -52,7 +54,8 @@ void settings() {
 }
 
 void setup() {
-
+  log = createWriter("log.txt");
+  log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
   reader = createReader("setting.txt");
   readText();
   indexText();
@@ -71,6 +74,7 @@ void setup() {
   speakerIcon = loadShape("speaker.svg");
   settingsIcon = loadShape("settings.svg");
   imageMode(CENTER);
+  
 
   //block setting
   int i, j;

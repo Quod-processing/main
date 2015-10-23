@@ -1,8 +1,8 @@
 void recieveServer() {
   String ServerRead = myClient.readString();
   String lineRead[] = split(ServerRead, "::");
-  println(ServerRead);
-  println(loginCache);
+  log.println("ServerRead : "+ServerRead);
+  log.println("loginCache : "+loginCache);
 
   for (int i=0; i<lineRead.length; i++) {
     String lineCache[] = split(lineRead[i], ":");
@@ -15,7 +15,6 @@ void recieveServer() {
           String md5="";
           for (int imd5=0; imd5<md5hash.length; imd5++) md5string+=(hex(md5hash[imd5], 2));
           md5=md5string.toLowerCase();
-          println(md5);
           myClient.write("2"+":"+DeviceID+":"+loginID+":"+md5+"::");
         }
       } else if (lineCache[0].equals("2")) {
@@ -25,7 +24,7 @@ void recieveServer() {
         } else {
           loginCache=-1;
           gmod = -700;
-          invalidIDPD=1;
+          validIDPDLI=1;
         }
       }
     }
