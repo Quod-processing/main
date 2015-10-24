@@ -20,6 +20,7 @@ void onlP1() {
   text("Log in", width/2, 335);
   text("Sign up", width/2, 415);
   text("Back", width/2, 495);
+  gmod = -gmod;
 }
 void onlP2() {
   statemod=1;

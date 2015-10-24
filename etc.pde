@@ -43,7 +43,7 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.5.0b2 BUILD42", width/2, 120);
+    text("quod v0.5.0b2 BUILD43", width/2, 120);
     image(mileuIcon, width/2, 240, 130, 130);
     text("software by mileu, seungwonpark", width/2, 350);
     text("visit 'mileu.ml' for more information", width/2, 500);

@@ -12,6 +12,8 @@ void state() {
     fill(0);
     text("settings", 50, 25);
     if (click==1) escmod = 0;
+  } else if (gmod != 100){
+    rect(50, 10, 85, 30);
   }
 
   //server state
