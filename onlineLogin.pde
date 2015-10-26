@@ -60,7 +60,7 @@ void onlPL2() {
       fill(0);
       text("Log in?", width/2, 495);
       if (click==1) {
-        gmod = -3;
+        gmod = 710;
         click = 0;
       }
     } else cursor(ARROW);

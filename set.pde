@@ -51,9 +51,14 @@ void settings() {
 
   size(1136, 640);
   pixelDensity(displayDensity());
+
 }
 
 void setup() {
+  
+  background(184, 241, 241);
+  fill(23, 93, 126);
+  
   log = createWriter("log.txt");
   log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
   reader = createReader("setting.txt");

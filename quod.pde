@@ -56,14 +56,18 @@ void draw() {
     onlPL2();
     break;
 
+  case 710:
+    onlLR(); // online login request to server
+    break;
+
   case -800:
     onlPS1(); // online signup
   case 800:
     onlPS2();
     break;
-
-  case -3:
-    onlLR(); // online login request to server
+    
+  case 810:
+    onlSR(); // online signup request to server
     break;
 
   case -750:

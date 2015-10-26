@@ -24,11 +24,14 @@ void onlP1() {
 }
 void onlP2() {
   statemod=1;
-
+  
+  noStroke();
   fill(255, 206, 160);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
+
+  textAlign(CENTER, CENTER);
   fill(0);
   textSize(48);
   text("Log in", width/2, 335);

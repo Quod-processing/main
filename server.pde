@@ -31,7 +31,7 @@ void recieveServer() {
     ///////////////////////////////////////////
     //end login
     //world join available
-    if (lineCache[0].equals("w") && lineCache[1]!=null) {
+    if (lineCache[0].equals("w") && lineCache.length>1) {
 
       //gameplay start
 
