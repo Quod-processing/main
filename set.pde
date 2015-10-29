@@ -57,16 +57,14 @@ void settings() {
 void setup() {
   
   background(184, 241, 241);
-  fill(23, 93, 126);
   
   log = createWriter("log.txt");
   log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
   reader = createReader("setting.txt");
   readText();
   indexText();
+  myClient = new Client(this, Settings[2], parseInt(Settings[3]));
   surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
-
-  myClient = new Client(this, Settings[2], parseInt(Settings[3]));//tcp port
   surface.setTitle("quod v0.5.0");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
