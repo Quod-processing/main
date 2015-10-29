@@ -1,4 +1,4 @@
-//v0.5.1
+//v0.6.0b1
 //beware for singleAI in ai check time.
 void draw() {
   log.println();
