@@ -9,6 +9,9 @@ void loadS1() {
   textSize(120);
   textAlign(CENTER, CENTER);
   text("Quod", width/2, 120);
+  textSize(36);
+  fill(255, 135, 38);
+  text("v0.5.1", width/2, 170);
   textSize(48);
   fill(0);
   textAlign(CENTER, BOTTOM);

@@ -43,10 +43,11 @@ void menu() {
     textAlign(CENTER, CENTER);
     fill(0);
     text("info", width/8+36, 57);
-    text("quod v0.5.1 BUILD45", width/2, 120);
-    image(mileuIcon, width/2, 240, 130, 130);
-    text("software by mileu, seungwonpark", width/2, 350);
-    text("visit 'mileu.ml' for more information", width/2, 500);
+    image(quodIcon, width/2, 170, 130, 130);
+    text("quod v0.5.1 BUILD46", width/2, 265);
+    image(mileuIcon, width/2, 370, 130, 130);
+    text("software by mileu, seungwonpark", width/2, 480);
+    text("visit 'mileu.ml' for more information", width/2, 550);
     upmenuButton();
     break;
 
@@ -84,10 +85,8 @@ void menu() {
     text("sound", width*5/8-12, 57);
 
     textAlign(LEFT, CENTER);
-    text("resolution", 80, 130);
-    text(Settings[0], 320, 130);
-    text("X", 390, 130);
-    text(Settings[1], 420, 130);
+    text("music sound", 80, 130);
+    text(Settings[5], 320, 130);
 
     upmenuButton();
     break;

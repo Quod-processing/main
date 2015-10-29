@@ -3,7 +3,7 @@ import processing.net.*;
 
 Client myClient;
 
-PImage mileuIcon;
+PImage mileuIcon, quodIcon;
 PShape infoIcon, speakerIcon, settingsIcon;
 
 BufferedReader reader;
@@ -65,13 +65,14 @@ void setup() {
   indexText();
   myClient = new Client(this, Settings[2], parseInt(Settings[3]));
   surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
-  surface.setTitle("quod v0.5.0");
+  surface.setTitle("quod v0.5.1");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);
   textAlign(CENTER, CENTER);
   smooth();
   frameRate(60);
+  quodIcon = loadImage("myicon.PNG");
   mileuIcon = loadImage("mileu.png");
   infoIcon = loadShape("info.svg");
   speakerIcon = loadShape("speaker.svg");
