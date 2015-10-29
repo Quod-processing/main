@@ -5,7 +5,7 @@
 Main code for Quod client
 - Based on : **Processing 3.0** https://processing.org/download/
 - for more information, visit http://mileu.ml
-- reference : quod.ml
+- reference : http://quod.ml
 - version info : v0.5.0b1BUILD37
 
 --------
