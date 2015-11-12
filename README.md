@@ -3,10 +3,14 @@
 --------
 # main
 Main code for Quod client
-- Based on : **Processing 3.0** https://processing.org/download/
+- Based on : **Processing 3.0.1** https://processing.org/download/
 - for more information, visit http://mileu.ml
+<<<<<<< Updated upstream
 - reference : http://quod.ml
-- version info : v0.6.0b1BUILD47
+=======
+- reference : quod.ml
+>>>>>>> Stashed changes
+- version info : v0.6.0b1BUILD48
 
 --------
 ## Basic Requirements for Development

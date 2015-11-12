@@ -15,7 +15,7 @@ void loadS1() {
   textSize(48);
   fill(0);
   textAlign(CENTER, BOTTOM);
-  text("click to start", width/2, height-10);
+  text("click to start!", width/2, height-10);
 
   //set loadS2
   gmod = -gmod;
