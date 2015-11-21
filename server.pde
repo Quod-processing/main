@@ -6,16 +6,16 @@ void recieveServer() {
 
   for (int i=0; i<lineRead.length; i++) {
     String lineCache[] = split(lineRead[i], ":");
-    //about login
+    //about login, SHA-256
     if (loginCache==3) {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {
-          byte[] md5hash = messageDigest5(loginPD, "MD5");
-          String md5string="";
-          String md5="";
-          for (int imd5=0; imd5<md5hash.length; imd5++) md5string+=(hex(md5hash[imd5], 2));
-          md5=md5string.toLowerCase();
-          myClient.write("2"+":"+DeviceID+":"+loginID+":"+md5+"::");
+          byte[] SHA256 = messageDigest(loginPD, "SHA-256");
+          String mdstring="";
+          String md="";
+          for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
+          md=mdstring.toLowerCase();
+          myClient.write("2"+":"+DeviceID+":"+loginID+":"+md+"::");
         }
       } else if (lineCache[0].equals("2")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(loginID)&&lineCache[3].equals("true")) {

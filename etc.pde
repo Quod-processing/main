@@ -1,7 +1,7 @@
 //aWin, bWin : show, A, B win
 //showBlock : show gameboard
 //menu
-//md5
+//SHA-256
 //help
 void menu() {
   statemod=0;
@@ -44,7 +44,7 @@ void menu() {
     fill(0);
     text("info", width/8+36, 57);
     image(quodIcon, width/2, 170, 130, 130);
-    text("quod v0.6.0b1 BUILD48", width/2, 265);
+    text("quod v0.6.0b1 BUILD49", width/2, 265);
     image(mileuIcon, width/2, 370, 130, 130);
     text("software by mileu, seungwonpark", width/2, 480);
     text("visit 'mileu.ml' for more information", width/2, 550);
@@ -275,8 +275,8 @@ void indexText() {
     i++;
   }
 }
-//md5
-byte[] messageDigest5(String message, String algorithm) {
+//SHA-256
+byte[] messageDigest(String message, String algorithm) {
   try {
     java.security.MessageDigest md = java.security.MessageDigest.getInstance(algorithm);
     md.update(message.getBytes());
