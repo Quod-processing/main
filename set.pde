@@ -32,14 +32,14 @@ int quazA, quazB;//quazer left of player A, B
 int lastBlockX, lastBlockY;// say what was last block
 
 String loginID=" ", loginPD=" ", DeviceID=" ";
-String signupID=" ", signupPD=" ", signupPDC=" "; // SignupPDC is check password to avoid typos
+String signupID=" ", signupPD=" ", signupPDC=" ", signupEmail=" "; // SignupPDC is check password to avoid typos
 String enemyID=" ";
 int lastEnemyAction = 0; //0 default, 1 is quod, 2 is quaz, 3 is say quod(squd)
 int enemyBlkX=0, enemyBlkY=0; //x, y coordinate of enemy;
 
 int loginCache=-1, signupCache=-1;
 int loginCacheSmall=0, signupCacheSmall=0;
-int validIDPDLI=0, validIDPDSU=0; //valid of login and signup id and password
+int validIDPDLI=0, validIDPDSU=0, validEmail=0; //valid of login and signup id and password
 int worldValid=333333;
 int roomRequested = 0; //0 is none, 1 is yes, 2 is client is playing
 int onlineJoinRoom = 0; //0 is none, room 1~6

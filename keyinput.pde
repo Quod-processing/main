@@ -25,6 +25,11 @@ void keyPressed() {
       signupID = signupID + key;
       signupID = trim(signupID);
     } else if ((key == DELETE||key == BACKSPACE) && signupID.length()>0) signupID = signupID.substring(0, signupID.length()-1);
+  } else if (inputmod == 815) {
+    if (((key >= 'a' && key <= 'z') || ( key>= '0' && key <= '9') || ( key=='.')) && signupEmail.length()<15) {
+      signupEmail = signupEmail + key;
+      signupEmail = trim(signupEmail);
+    } else if ((key == DELETE||key == BACKSPACE) && signupEmail.length()>0) signupEmail = signupEmail.substring(0, signupEmail.length()-1);
   } else if (inputmod == 820) {
     if (((key >= 'A' && key <= 'z') || ( key>= '0' && key <= '9')) && signupPD.length()<8) {
       signupPD = signupPD + key;

@@ -14,11 +14,14 @@ void onlPS2() {
   text("Sign up", width/2, 170);
   fill(255, 206, 160);
   rect(width/2-140, 300, 280, 70);
+  rect(width/2+170, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
   fill(0);
   textSize(48);
   text("ID", width/2, 335);
+  text("@", width/2+155, 335);
+  text("example.com", width/2+310, 335);
   text("PASSWORD", width/2, 415);
   text("Sign up", width/2, 495);
 
@@ -41,6 +44,12 @@ void onlPS2() {
     fill(0);
     text(signupID, width/2, 335);
     inputmod = 810;
+  } else if (mouseY>300&&mouseY<370&&mouseX>(width/2+160)&&mouseX<(width/2+440)) {
+    cursor(TEXT);
+    rect(width/2+170, 300, 280, 70);
+    fill(0);
+    text(signupEmail, width/2+310, 335);
+    inputmod = 815;
   } else if (mouseY>380&&mouseY<450&&mouseX>(width/2-140)&&mouseX<(width/2+140)) {
     cursor(TEXT);
     rect(width/2-140, 380, 280, 70);
@@ -74,12 +83,13 @@ void onlPS2() {
     }
     inputmod = 830;
   }
+  
 }
 
 void onlSR(){
     if (signupCache==-1) {
     DeviceID=str((int)random(1000, 9999));
     signupCache=3;
-    myClient.write("1"+":"+DeviceID+":"+loginID+"::");
+    myClient.write("3"+":"+DeviceID+":"+signupID+"::");
   }
 }

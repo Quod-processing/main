@@ -6,6 +6,29 @@ void recieveServer() {
 
   for (int i=0; i<lineRead.length; i++) {
     String lineCache[] = split(lineRead[i], ":");
+    //about signup
+    if (signupCache==3) {
+      if (lineCache[0].equals("1")) {
+        if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(signupID)&&lineCache[3].equals("true")) {
+          byte[] SHA256 = messageDigest(signupPD, "SHA-256");
+          String mdstring="";
+          String md="";
+          for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
+          md=mdstring.toLowerCase();
+          myClient.write("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
+        }
+      } else if (lineCache[0].equals("2")) {
+        if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(signupID)&&lineCache[3].equals("true")) {
+          signupCache=4;
+          loginID=signupID;
+          gmod = -750;
+        } else {
+          signupCache=-1;
+          gmod = -700;
+          validIDPDLI=1;
+        }
+      }
+    }
     //about login, SHA-256
     if (loginCache==3) {
       if (lineCache[0].equals("1")) {
