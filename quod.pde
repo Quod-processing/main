@@ -1,6 +1,7 @@
 //v0.6.0b1
 //beware for singleAI in ai check time.
 void draw() {
+  
   log.println();
   log.println(hour()+":"+minute()+":"+second()+"."+millis());
   log.println("fps : "+frameRate);

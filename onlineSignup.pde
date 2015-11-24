@@ -1,8 +1,12 @@
 // online signup
 void onlPS1() {
   gmod = -gmod;
+  
 }
 void onlPS2() {
+  signupCache=-1;
+  statemod=1;
+  
   background(184, 241, 241);
   textSize(120);
   textAlign(CENTER, CENTER);
@@ -19,9 +23,11 @@ void onlPS2() {
   rect(width/2-140, 460, 280, 70);
   fill(0);
   textSize(48);
-  text("ID", width/2, 335);
+  if(signupID.equals(" ")) text("ID", width/2, 335);
+  else text(signupID, width/2, 335);
   text("@", width/2+155, 335);
-  text("example.com", width/2+310, 335);
+  if(signupEmail.equals(" ")) text("example.com", width/2+310, 335);
+  else text(signupEmail, width/2+310, 335);
   text("PASSWORD", width/2, 415);
   text("Sign up", width/2, 495);
 

@@ -47,10 +47,6 @@ void onlP2() {
       }
     } else if (mouseY>380&&mouseY<450) {
       rect(width/2-140, 380, 280, 70);
-      fill(255, 0, 0);
-      textAlign(CENTER, CENTER);
-      textSize(24);
-      text("sign up is not supported", width/2, 415);
       if(click == 1) {
         gmod = -800;
         click = 0;
@@ -252,7 +248,11 @@ void onlLVSBefore() {
     }
   } else if ((worldValid/pow(10, onlineJoinRoom-1))%10==3) gmod=-900;
 
+
+
+//player info
   textSize(48);
   textAlign(LEFT, CENTER);
-  text("ID : "+loginID, 50, 335);
+  text("ID : "+loginID, width-300, 250);
+  
 }

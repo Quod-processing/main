@@ -25,7 +25,8 @@ void onlPL2() {
   rect(width/2-140, 460, 280, 70);
   fill(0);
   textSize(48);
-  text("ID", width/2, 335);
+  if(loginID.equals(" ")) text("ID", width/2, 335);
+  else text(loginID, width/2, 335);
   text("PASSWORD", width/2, 415);
   text("Log in", width/2, 495);
 

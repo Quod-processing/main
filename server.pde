@@ -15,6 +15,7 @@ void recieveServer() {
           String md="";
           for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
           md=mdstring.toLowerCase();
+          log.println("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
           myClient.write("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
         }
       } else if (lineCache[0].equals("2")) {
@@ -38,6 +39,7 @@ void recieveServer() {
           String md="";
           for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
           md=mdstring.toLowerCase();
+          log.println("2"+":"+DeviceID+":"+loginID+":"+md+"::");
           myClient.write("2"+":"+DeviceID+":"+loginID+":"+md+"::");
         }
       } else if (lineCache[0].equals("2")) {

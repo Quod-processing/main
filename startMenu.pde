@@ -46,6 +46,9 @@ void statM1() {
   fill(23, 93, 126);
   textAlign(CENTER, CENTER);
   text("Quod", width/2, 120);
+  textSize(36);
+  fill(255, 135, 38);
+  text("for OS X", width/2, 170);
   fill(255, 206, 160);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
@@ -69,9 +72,7 @@ void statM2() {
   rect(width/2-140, 460, 280, 70);
   fill(0);
   textSize(48);
-  text("Local Play", width/2, 335);
   text("Online Play", width/2, 415);
-  text("Help", width/2, 495);
   if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
     fill(241, 232, 212);
     if (mouseY>300&&mouseY<370) { // Local Play
@@ -95,6 +96,10 @@ void statM2() {
       } else if (click==1) {
         gmod = -600;
         click=0;
+      } else {
+        fill(0);
+        textSize(48);
+        text("Online Play", width/2, 415);
       }
     } else if (mouseY>460&&mouseY<530) { // Help
       rect(width/2-140, 460, 280, 70);
@@ -104,4 +109,8 @@ void statM2() {
       }
     }
   }
+  fill(0);
+  textSize(48);
+  text("Local Play", width/2, 335);
+  text("Help", width/2, 495);
 }

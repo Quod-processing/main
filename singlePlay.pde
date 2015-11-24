@@ -35,13 +35,6 @@ void snglP2() {
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
 
-  fill(0);
-  textSize(48);
-  textAlign(CENTER, CENTER);
-  text("AI", width/2, 335);
-  text("1 VS 1", width/2, 415);
-  text("Back", width/2, 495);
-
   if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
     fill(241, 232, 212);
     if (mouseY>300&&mouseY<370) {
@@ -68,4 +61,11 @@ void snglP2() {
       }
     }
   }
+  
+  fill(0);
+  textSize(48);
+  textAlign(CENTER, CENTER);
+  text("AI", width/2, 335);
+  text("1 VS 1", width/2, 415);
+  text("Back", width/2, 495);
 }
