@@ -4,14 +4,14 @@
 void loadS1() {
   statemod=1;
 
-  background(184, 241, 241);
+  background(243, 241, 228);
   fill(23, 93, 126);
   textSize(120);
   textAlign(CENTER, CENTER);
   text("Quod", width/2, 120);
   textSize(36);
   fill(255, 135, 38);
-  text("v0.6.0b1", width/2, 170);
+  text("v0.6.0b2", width/2, 170);
   textSize(48);
   fill(0);
   textAlign(CENTER, BOTTOM);
@@ -24,7 +24,7 @@ void loadS2() {
   statemod=1;
 
   noStroke();
-  fill(184, 241, 241);
+  fill(243, 241, 228);
   rect(45, 0, 200, 50);
   if (frameCount>48) frameCount=0;
   fill(0, (abs(frameCount-25)%26)*10);
@@ -40,7 +40,7 @@ void loadS2() {
 
 void statM1() {
   statemod=1;
-  background(184, 241, 241);
+  background(243, 241, 228);
   textSize(120);
   noStroke();
   fill(23, 93, 126);
@@ -49,7 +49,7 @@ void statM1() {
   textSize(36);
   fill(255, 135, 38);
   text("for OS X", width/2, 170);
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
@@ -66,7 +66,7 @@ void statM2() {
   statemod=1;
   noStroke();
   textAlign(CENTER, CENTER);
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
@@ -74,7 +74,7 @@ void statM2() {
   textSize(48);
   text("Online Play", width/2, 415);
   if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
-    fill(241, 232, 212);
+    fill(255, 206, 160);
     if (mouseY>300&&mouseY<370) { // Local Play
       rect(width/2-140, 300, 280, 70);
       if (click==1) {
@@ -84,13 +84,13 @@ void statM2() {
     } else if (mouseY>380&&mouseY<450) { // Online Play
       rect(width/2-140, 380, 280, 70);
 
-      if (myClient.active()==false) {
+      if (serverstate==0 || myClient.active()==false) {
         fill(255, 0, 0);
         textAlign(CENTER, CENTER);
         textSize(24);
         text("server connection fail", width/2, 415);
         if (click == 1) {
-          myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
+          thread("connectServer"); //retry to connect
           click = 0;
         }
       } else if (click==1) {
@@ -104,6 +104,7 @@ void statM2() {
     } else if (mouseY>460&&mouseY<530) { // Help
       rect(width/2-140, 460, 280, 70);
       if (click==1) {
+        link("http://www.mileu.ml");
         gmod=3000;
         click=0;
       }

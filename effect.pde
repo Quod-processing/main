@@ -3,7 +3,7 @@
 void state() {
   //settings
   noStroke();
-  fill(184, 241, 241);
+  fill(243, 241, 228);
   rect(1000, 25, 136, 60);
   shape(settingsIcon, 10, 10, 30, 30);
   if (gmod != 100){
@@ -24,14 +24,14 @@ void state() {
   text("server", width-30, 40);
   stroke(255);
   strokeWeight(3);
-  if (myClient.active()==true) fill(0, 255, 0);
+  if (serverstate==1 && myClient.active()==true) fill(0, 255, 0);
   else {
     fill(0);
     text("reconnect", width-20, 65);
     if (mouseX>width-140 && mouseX<width-10 && mouseY>30 && mouseY<80) {
       text("?", width-10, 65);
       if (click==1) {
-        myClient = new Client(this, Settings[2], parseInt(Settings[3])); //retry to connect
+        thread("connectServer"); //retry to connect
       }
     }
     fill(255, 0, 0);

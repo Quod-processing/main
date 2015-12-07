@@ -3,7 +3,7 @@
 void snglP1() {
   statemod=1;
 
-  background(184, 241, 241);
+  background(243, 241, 228);
   textSize(120);
   noStroke();
   fill(23, 93, 126);
@@ -12,7 +12,7 @@ void snglP1() {
   fill(255, 135, 38);
   textSize(36);
   text("Local Play", width/2, 170);
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
@@ -30,13 +30,13 @@ void snglP2() {
 
   statemod=1;
   noStroke();
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
   rect(width/2-140, 460, 280, 70);
 
   if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
-    fill(241, 232, 212);
+    fill(255, 206, 160);
     if (mouseY>300&&mouseY<370) {
       rect(width/2-140, 300, 280, 70);
       if (click==1) {

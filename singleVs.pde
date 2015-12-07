@@ -2,7 +2,7 @@
 
 void snglPvs1() {
 
-  background(184, 241, 241);
+  background(243, 241, 228);
   showBlock();
 
   //red, playerA

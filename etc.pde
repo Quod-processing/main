@@ -29,7 +29,7 @@ void menu() {
 
   //main menu
   noStroke();
-  fill(241, 232, 212);
+  fill(231, 233, 227);
   rect(48, 27, width-96, height-54);
   switch(menuKind) {
   case 0:
@@ -44,7 +44,7 @@ void menu() {
     fill(0);
     text("info", width/8+36, 57);
     image(quodIcon, width/2, 170, 130, 130);
-    text("quod v0.6.0b1 BUILD51", width/2, 265);
+    text("quod v0.6.0b2 BUILD52", width/2, 265);
     image(mileuIcon, width/2, 370, 130, 130);
     text("software by mileu, seungwonpark", width/2, 480);
     text("visit 'mileu.ml' for more information", width/2, 550);
@@ -110,7 +110,7 @@ void menu() {
     text(Settings[3], 350, 200);
 
     if (mouseX > 340&& mouseX < 500 && mouseY > 110 && mouseY < 160) {
-      fill(241, 232, 212);
+      fill(255, 206, 160);
       rect(340, 110, 160, 50);
       fill(255, 0, 0);
       textAlign(LEFT, CENTER);
@@ -291,7 +291,7 @@ byte[] messageDigest(String message, String algorithm) {
 
 void help() {
 
-  background(184, 241, 241);
+  background(243, 241, 228);
   textSize(120);
   noStroke();
   fill(23, 93, 126);
@@ -299,11 +299,11 @@ void help() {
   text("help", width/2, 200);
   textSize(70);
   text("visit 'mileu.ml'", width/2, 350);
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 460, 280, 70);
 
   if (mouseX>(width/2-140)&&mouseX<(width/2+140)) {
-    fill(241, 232, 212);
+    fill(255, 206, 160);
     if (mouseY>460&&mouseY<530) {
       rect(width/2-140, 460, 280, 70);
       if (click==1) {

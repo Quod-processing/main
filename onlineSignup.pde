@@ -7,7 +7,7 @@ void onlPS2() {
   signupCache=-1;
   statemod=1;
   
-  background(184, 241, 241);
+  background(243, 241, 228);
   textSize(120);
   textAlign(CENTER, CENTER);
   noStroke();
@@ -16,7 +16,7 @@ void onlPS2() {
   fill(255, 135, 38);
   textSize(36);
   text("Sign up", width/2, 170);
-  fill(255, 206, 160);
+  fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
   rect(width/2+170, 300, 280, 70);
   rect(width/2-140, 380, 280, 70);
@@ -38,12 +38,12 @@ void onlPS2() {
   if (signupPD.length()==8) text("PASSWORD should be shorter than 9 letters", width/2+155, 415);
   if (validIDPDSU==1) text("inconsistent PASSWORD", width/2+155, 495);
   textAlign(CENTER, CENTER);
-  strokeWeight(5);
+  strokeWeight(3);
   stroke(249, 100, 45);
   textSize(48);
 
 
-  fill(241, 232, 212);
+  fill(231, 233, 227);
   if (mouseY>300&&mouseY<370&&mouseX>(width/2-140)&&mouseX<(width/2+140)) {
     cursor(TEXT);
     rect(width/2-140, 300, 280, 70);

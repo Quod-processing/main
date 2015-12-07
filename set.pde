@@ -18,6 +18,7 @@ int escmod = -1;//help, option, menu
 int inputmod = -1;//keyboard input mod
 int menuKind = 0;
 int statemod = 1;//server state, etc..
+int serverstate = 0;
 int aiTurn = -1;//check if ai will work or not
 int[][] blk = new int[50][50];//x,y coordinate if tile exist 0:no, 1: default 2:red 3: blue
 int[][] aiBlk = new int[50][50];//for tile, for ai compute
@@ -50,22 +51,27 @@ PFont font;
 void settings() {
 
   size(1136, 640, P2D);
+  /*
+  size(1136, 640, P2D); -> for OS X
+  size(1136, 640); -> for windows
+  unknown error why p2d is not run on windows
+  */
   pixelDensity(displayDensity());
 
 }
 
 void setup() {
   
-  background(184, 241, 241);
+  background(243, 241, 228);
   
   log = createWriter("log.txt");
   log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
   reader = createReader("setting.txt");
   readText();
   indexText();
-  myClient = new Client(this, Settings[2], parseInt(Settings[3]));
+  thread("connectServer");
   surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
-  surface.setTitle("quod v0.6.0b1");
+  surface.setTitle("quod v0.6.0b2");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);
@@ -105,4 +111,9 @@ void setup() {
   click=0;
   gmod=-100;
   turn=-1;
+}
+
+void connectServer(){
+  myClient = new Client(this, Settings[2], parseInt(Settings[3]));
+  serverstate = 1;
 }

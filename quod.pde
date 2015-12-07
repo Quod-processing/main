@@ -1,4 +1,4 @@
-//v0.6.0b1
+//v0.6.0b2
 //beware for singleAI in ai check time.
 void draw() {
   
@@ -10,7 +10,7 @@ void draw() {
 
   inputmod = -1;
 
-  if (myClient.available()>0) recieveServer();
+  if (serverstate==1 && myClient.available()>0) recieveServer();
 
   if (escmod == 0) menu();
   else switch(gmod) {
