@@ -1,6 +1,8 @@
 //set, basic settings 
 import processing.net.*;
-
+//import java.io.InputStreamReader;//for os x battery
+//String commandToRun = "pmset -g batt";//for os x battery
+//String response=null;//for os x battery
 Client myClient;
 
 PImage mileuIcon, quodIcon;
@@ -53,16 +55,33 @@ void settings() {
   size(1136, 640, P2D);
   /*
   size(1136, 640, P2D); -> for OS X
-  size(1136, 640); -> for windows
-  unknown error why p2d is not run on windows
-  */
+   size(1136, 640); -> for windows
+   unknown error why p2d is not run on windows
+   */
   pixelDensity(displayDensity());
-
 }
 
 void setup() {
-  
+
   background(243, 241, 228);
+
+  //check for os x battery
+  /*
+  try {
+   Process proc = (Runtime.getRuntime()).exec(commandToRun);
+   
+   BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+   
+   
+   while ((response = stdInput.readLine()) != null) {
+   System.out.println(response);
+   }
+   
+   }
+   catch(Exception e) {
+   println(e);
+   }
+   */
   
   log = createWriter("log.txt");
   log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
@@ -84,7 +103,7 @@ void setup() {
   speakerIcon = loadShape("speaker.svg");
   settingsIcon = loadShape("settings.svg");
   imageMode(CENTER);
-  
+
 
   //block setting
   int i, j;
@@ -113,7 +132,7 @@ void setup() {
   turn=-1;
 }
 
-void connectServer(){
+void connectServer() {
   myClient = new Client(this, Settings[2], parseInt(Settings[3]));
   serverstate = 1;
 }

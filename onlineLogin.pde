@@ -34,8 +34,8 @@ void onlPL2() {
   textAlign(LEFT, TOP);
   fill(255, 0, 0);
   textSize(16);
-  if (loginID.length()==8) text("ID should be shorter than 9 letters", width/2+155, 335);
-  if (loginPD.length()==8) text("PASSWORD should be shorter than 9 letters", width/2+155, 415);
+  if (loginID.length()==10) text("ID should be shorter than 11 letters", width/2+155, 335);
+  if (loginPD.length()==10) text("PASSWORD should be shorter than 11 letters", width/2+155, 415);
   if (validIDPDLI==1) text("invalid ID or PASSWORD", width/2+155, 495);
   textAlign(CENTER, CENTER);
   strokeWeight(3);

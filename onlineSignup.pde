@@ -34,8 +34,8 @@ void onlPS2() {
   textAlign(LEFT, TOP);
   fill(255, 0, 0);
   textSize(16);
-  if (signupID.length()==8) text("ID should be shorter than 9 letters", width/2+155, 335);
-  if (signupPD.length()==8) text("PASSWORD should be shorter than 9 letters", width/2+155, 415);
+  if (signupID.length()==10) text("ID should be shorter than 11 letters", width/2+155, 335);
+  if (signupPD.length()==10) text("PASSWORD should be shorter than 11 letters", width/2+155, 415);
   if (validIDPDSU==1) text("inconsistent PASSWORD", width/2+155, 495);
   textAlign(CENTER, CENTER);
   strokeWeight(3);

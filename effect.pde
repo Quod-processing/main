@@ -40,7 +40,7 @@ void state() {
 }
 
 void chkQd(int aorb) {
-  int i, j, k, l, m, n, x, y, z, w;
+  int i, j, k, l;
   int round=0;
   noStroke();
   for (i=1; i<12; i++) { //show block!

@@ -10,7 +10,7 @@ Main code for Quod client
 =======
 - reference : http://quod.ml
 >>>>>>> Stashed changes
-- version info : v0.6.0b2BUILD52
+- version info : v0.6.0b2BUILD53
 
 --------
 ## Basic Requirements for Development

@@ -71,7 +71,7 @@ void onlPvs1() {
   if (turn == 0) {
     textSize(60);          
     noStroke();          
-    fill(255, 238, 96);          
+    fill(248, 236, 114);          
     rect(0, 540, 248, 100);          
     fill(0);          
     text("quod", 124, 590);   
@@ -82,7 +82,7 @@ void onlPvs1() {
   } else if (turn == 2) {
     textSize(60);          
     noStroke();          
-    fill(255, 238, 96);          
+    fill(248, 236, 114);          
     rect(0, 540, 248, 100);          
     fill(0);          
     text("quod", 124, 590);  
@@ -97,7 +97,7 @@ void onlPvs1() {
     rect(0, 540, 248, 100);
     fill(0);
     text("wait", 124, 590);
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(888, 540, 248, 100);
     fill(0);
     text("finish", 1012, 590);
@@ -108,7 +108,7 @@ void onlPvs1() {
     rect(0, 540, 248, 100);
     fill(0);
     text("wait", 124, 590);
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(888, 540, 248, 100);
     fill(0);
     text("finish", 1012, 590);

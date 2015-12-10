@@ -2,6 +2,7 @@
 //loadS : load screne
 
 void loadS1() {
+  //frameRate(30);
   statemod=1;
 
   background(243, 241, 228);

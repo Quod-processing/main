@@ -83,7 +83,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2-160, 310, 100, 100);
     fill(0);
     text("1/2", width/2-110, 360);
@@ -105,7 +105,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2-50, 310, 100, 100);
     fill(0);
     text("1/2", width/2, 360);
@@ -127,7 +127,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2+60, 310, 100, 100);
     fill(0);
     text("1/2", width/2+110, 360);
@@ -149,7 +149,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2-160, 420, 100, 100);
     fill(0);
     text("1/2", width/2-110, 470);
@@ -171,7 +171,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2-50, 420, 100, 100);
     fill(0);
     text("1/2", width/2, 470);
@@ -193,7 +193,7 @@ void onlLVSBefore() {
     break;
 
   case 2:
-    fill(255, 238, 96);
+    fill(248, 236, 114);
     rect(width/2+60, 420, 100, 100);
     fill(0);
     text("1/2", width/2+110, 470);
