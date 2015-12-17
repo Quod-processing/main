@@ -1,6 +1,7 @@
 //aWin, bWin : show, A, B win
 //showBlock : show gameboard
 //menu
+//hexChange
 //SHA-256
 //help
 void menu() {
@@ -44,7 +45,7 @@ void menu() {
     fill(0);
     text("info", width/8+36, 57);
     image(quodIcon, width/2, 170, 130, 130);
-    text("quod v0.6.0b2 BUILD53", width/2, 265);
+    text("quod v0.6.0b2 BUILD54", width/2, 265);
     image(mileuIcon, width/2, 370, 130, 130);
     text("software by mileu, seungwonpark", width/2, 480);
     text("visit 'mileu.ml' for more information", width/2, 550);
@@ -276,6 +277,14 @@ void indexText() {
     Settings[i]=trim(indexTextCache[1]);
     i++;
   }
+}
+
+//change byte[] to string, for sha/aes
+String hexChange(byte[] message) {
+  String messageString="";
+  for (int i=0; i<message.length; i++) messageString+=(hex(message[i], 2));
+  messageString = messageString.toLowerCase();
+  return messageString;
 }
 //SHA-256
 byte[] messageDigest(String message, String algorithm) {

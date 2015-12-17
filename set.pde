@@ -83,7 +83,7 @@ void setup() {
    }
    */
   
-  log = createWriter("log.txt");
+  log = createWriter(".log.txt");
   log.println("Log created date : "+year()+"/"+month()+"/"+day()+" "+hour()+":"+minute()+":"+second()+"."+millis());
   reader = createReader("setting.txt");
   readText();

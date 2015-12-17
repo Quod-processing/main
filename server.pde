@@ -10,11 +10,7 @@ void recieveServer() {
     if (signupCache==3) {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(signupID)&&lineCache[3].equals("true")) {
-          byte[] SHA256 = messageDigest(signupPD, "SHA-256");
-          String mdstring="";
-          String md="";
-          for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
-          md=mdstring.toLowerCase();
+          String md=hexChange(messageDigest(signupPD, "SHA-256"));
           log.println("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
           myClient.write("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
         }
@@ -34,11 +30,7 @@ void recieveServer() {
     if (loginCache==3) {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID) && lineCache[2].equals(loginID) && lineCache[3].equals("true")) {
-          byte[] SHA256 = messageDigest(loginPD, "SHA-256");
-          String mdstring="";
-          String md="";
-          for (int imd=0; imd<SHA256.length; imd++) mdstring+=(hex(SHA256[imd], 2));
-          md=mdstring.toLowerCase();
+          String md=hexChange(messageDigest(loginPD, "SHA-256"));
           log.println("2"+":"+DeviceID+":"+loginID+":"+md+"::");
           myClient.write("2"+":"+DeviceID+":"+loginID+":"+md+"::");
         }
@@ -102,8 +94,6 @@ void recieveServer() {
 
 
 //developing..
-void SendServer(String messageSend){
+void SendServer(String messageSend) {
   myClient.write(messageSend);
-  
-  
 }
