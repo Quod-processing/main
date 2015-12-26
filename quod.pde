@@ -1,7 +1,7 @@
 //v0.6.0b2
 //beware for singleAI in ai check time.
 void draw() {
-  
+
   log.println();
   log.println(hour()+":"+minute()+":"+second()+"."+millis());
   log.println("fps : "+frameRate);
@@ -66,7 +66,7 @@ void draw() {
   case 800:
     onlPS2();
     break;
-    
+
   case 810:
     onlSR(); // online signup request to server
     break;

@@ -1,5 +1,4 @@
 //ai.. sorry this doesn't have any algorithm..
-
 void ai() {
   int i, j, k, l, m;
   int colorblock = 1; // check if computer have left blocks
@@ -86,5 +85,6 @@ void ai() {
       aiansY=j;
     }
   }
+
   aiFinish=1;
 }

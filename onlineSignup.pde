@@ -1,12 +1,11 @@
 // online signup
 void onlPS1() {
   gmod = -gmod;
-  
 }
 void onlPS2() {
   signupCache=-1;
   statemod=1;
-  
+
   background(243, 241, 228);
   textSize(120);
   textAlign(CENTER, CENTER);
@@ -23,10 +22,10 @@ void onlPS2() {
   rect(width/2-140, 460, 280, 70);
   fill(0);
   textSize(48);
-  if(signupID.equals(" ")) text("ID", width/2, 335);
+  if (signupID.equals(" ")) text("ID", width/2, 335);
   else text(signupID, width/2, 335);
   text("@", width/2+155, 335);
-  if(signupEmail.equals(" ")) text("example.com", width/2+310, 335);
+  if (signupEmail.equals(" ")) text("example.com", width/2+310, 335);
   else text(signupEmail, width/2+310, 335);
   text("PASSWORD", width/2, 415);
   text("Sign up", width/2, 495);
@@ -76,12 +75,12 @@ void onlPS2() {
     fill(0);
     textSize(48);
     text(signupPDC, width/2+300, 415);
-    
+
     if (signupPDC.equals(" ")) {
       textSize(36);
       text("RETYPE PASSWORD", width/2+300, 415);
     }
-    
+
     if (!signupPDC.equals(signupPD)) {
       fill(255, 0, 0);
       textSize(16);
@@ -89,11 +88,10 @@ void onlPS2() {
     }
     inputmod = 830;
   }
-  
 }
 
-void onlSR(){
-    if (signupCache==-1) {
+void onlSR() {
+  if (signupCache==-1) {
     DeviceID=str((int)random(1000, 9999));
     signupCache=3;
     myClient.write("3"+":"+DeviceID+":"+signupID+"::");

@@ -1,5 +1,6 @@
 //aWin, bWin : show, A, B win
 //showBlock : show gameboard
+//showQuaz
 //menu
 //hexChange
 //SHA-256
@@ -45,7 +46,7 @@ void menu() {
     fill(0);
     text("info", width/8+36, 57);
     image(quodIcon, width/2, 170, 130, 130);
-    text("quod v0.6.0b2 BUILD54", width/2, 265);
+    text("quod v0.6.0b2 BUILD55", width/2, 265);
     image(mileuIcon, width/2, 370, 130, 130);
     text("software by mileu, seungwonpark", width/2, 480);
     text("visit 'mileu.ml' for more information", width/2, 550);
@@ -148,7 +149,7 @@ void upmenuButton() {
 }
 
 void showBlock() {
-  int i, j, round=0;
+  int i, j;
   fill(255);
   noStroke();
   rect(248, 0, 640, 640); //game display
@@ -166,6 +167,58 @@ void showBlock() {
   if (blk[lastBlockX][lastBlockY]==2) fill(255, 0, 0);
   else fill(0, 0, 255);
   rect(204+lastBlockX*57, -44+lastBlockY*57, 44, 44, 11);
+}
+
+void showQuaz() {
+  if (quazA>0) {
+    fill(255, 227, 212);
+    rect(0, 220, 248, 40);
+  }
+  if (quazA>1) {
+    fill(255, 212, 194);
+    rect(0, 270, 248, 40);
+  }
+  if (quazA>2) {
+    fill(255, 197, 188);
+    rect(0, 320, 248, 40);
+  }
+  if (quazA>3) {
+    fill(255, 163, 162);
+    rect(0, 370, 248, 40);
+  }
+  if (quazA>4) {
+    fill(231, 94, 90);
+    rect(0, 420, 248, 40);
+  }
+  if (quazA>5) {
+    fill(187, 62, 69);
+    rect(0, 470, 248, 40);
+  }
+
+  if (quazB>0) {
+    fill(212, 163, 110);
+    rect(888, 220, 248, 40);
+  }
+  if (quazB>1) {
+    fill(196, 132, 85);
+    rect(888, 270, 248, 40);
+  }
+  if (quazB>2) {
+    fill(156, 97, 71);
+    rect(888, 320, 248, 40);
+  }
+  if (quazB>3) {
+    fill(131, 88, 74);
+    rect(888, 370, 248, 40);
+  }
+  if (quazB>4) {
+    fill(110, 76, 68);
+    rect(888, 420, 248, 40);
+  }
+  if (quazB>5) {
+    fill(79, 69, 64);
+    rect(888, 470, 248, 40);
+  }
 }
 
 void aWin() {
@@ -321,7 +374,7 @@ void help() {
       }
     }
   }
-  
+
   fill(0);
   textSize(48);
   textAlign(CENTER, CENTER);

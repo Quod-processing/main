@@ -6,7 +6,7 @@ void state() {
   fill(243, 241, 228);
   rect(1000, 25, 136, 60);
   shape(settingsIcon, 10, 10, 30, 30);
-  if (gmod != 100){
+  if (gmod != 100) {
     rect(50, 10, 85, 30);
   }
   if (mouseX>0 && mouseX<=50 && mouseY>0 && mouseY<=50) {
@@ -83,7 +83,7 @@ void chkQd(int aorb) {
                 line(226+k*57, -22+l*57, 226+(l+k-j)*57, -22+(l-k+i)*57);
                 line(226+(l+k-j)*57, -22+(l-k+i)*57, 226+(i-j+l)*57, -22+(i+j-k)*57);
                 line(226+(i-j+l)*57, -22+(i+j-k)*57, 226+i*57, -22+j*57);
-                if(aorb == 0) gmod = 1000;
+                if (aorb == 0) gmod = 1000;
                 else gmod = 2000;
               }
             }
@@ -105,7 +105,7 @@ void chkQd(int aorb) {
                 line(226+k*57, -22+l*57, 226+(l+k-j)*57, -22+(l-k+i)*57);
                 line(226+(l+k-j)*57, -22+(l-k+i)*57, 226+(i-j+l)*57, -22+(i+j-k)*57);
                 line(226+(i-j+l)*57, -22+(i+j-k)*57, 226+i*57, -22+j*57);
-                if(aorb == 0) gmod = 1000;
+                if (aorb == 0) gmod = 1000;
                 else gmod = 2000;
               }
             }

@@ -1,7 +1,7 @@
 //online play before menus
 void onlP1() {
   statemod=1;
-  
+
   background(243, 241, 228);
   textSize(120);
   textAlign(CENTER, CENTER);
@@ -22,9 +22,10 @@ void onlP1() {
   text("Back", width/2, 495);
   gmod = -gmod;
 }
+
 void onlP2() {
   statemod=1;
-  
+
   noStroke();
   fill(241, 232, 212);
   rect(width/2-140, 300, 280, 70);
@@ -47,7 +48,7 @@ void onlP2() {
       }
     } else if (mouseY>380&&mouseY<450) {
       rect(width/2-140, 380, 280, 70);
-      if(click == 1) {
+      if (click == 1) {
         gmod = -800;
         click = 0;
       }
@@ -250,9 +251,8 @@ void onlLVSBefore() {
 
 
 
-//player info
+  //player info
   textSize(48);
   textAlign(LEFT, CENTER);
   text("ID : "+loginID, width-300, 250);
-  
 }

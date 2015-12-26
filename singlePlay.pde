@@ -61,7 +61,7 @@ void snglP2() {
       }
     }
   }
-  
+
   fill(0);
   textSize(48);
   textAlign(CENTER, CENTER);

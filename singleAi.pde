@@ -3,68 +3,18 @@ void snglPai1() {
 
   background(243, 241, 228);
   showBlock();
+  showQuaz();//show number of quaz left
 
   //red, playerA
   fill(255, 0, 0);
   textSize(48);
   textAlign(CENTER, CENTER);
   text("A", 124, 40);
-  //show number of quaz left
-  if (quazA>0) {
-    fill(255, 227, 212);
-    rect(0, 220, 248, 40);
-  }
-  if (quazA>1) {
-    fill(255, 212, 194);
-    rect(0, 270, 248, 40);
-  }
-  if (quazA>2) {
-    fill(255, 197, 188);
-    rect(0, 320, 248, 40);
-  }
-  if (quazA>3) {
-    fill(255, 163, 162);
-    rect(0, 370, 248, 40);
-  }
-  if (quazA>4) {
-    fill(231, 94, 90);
-    rect(0, 420, 248, 40);
-  }
-  if (quazA>5) {
-    fill(187, 62, 69);
-    rect(0, 470, 248, 40);
-  }
 
   //blue, playerB
   fill(0, 0, 255);
   textSize(48);
   text("B", 1012, 40);
-
-
-  if (quazB>0) {
-    fill(212, 163, 110);
-    rect(888, 220, 248, 40);
-  }
-  if (quazB>1) {
-    fill(196, 132, 85);
-    rect(888, 270, 248, 40);
-  }
-  if (quazB>2) {
-    fill(156, 97, 71);
-    rect(888, 320, 248, 40);
-  }
-  if (quazB>3) {
-    fill(131, 88, 74);
-    rect(888, 370, 248, 40);
-  }
-  if (quazB>4) {
-    fill(110, 76, 68);
-    rect(888, 420, 248, 40);
-  }
-  if (quazB>5) {
-    fill(79, 69, 64);
-    rect(888, 470, 248, 40);
-  }
 
   if (turn == 0) {
     textSize(60);          
