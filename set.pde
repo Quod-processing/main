@@ -5,6 +5,13 @@ import processing.net.*;
 //String response=null;//for os x battery
 Client myClient;
 
+class player {
+  String name = " ";
+  int time;
+  int timex, timey;
+  int quaz;
+}
+
 PImage mileuIcon, quodIcon;
 PShape infoIcon, speakerIcon, settingsIcon;
 
@@ -30,13 +37,12 @@ int aiFinish=0;
 
 float timeA, timeB;//time left of player A, B
 int timeAx, timeAy, timeBx, timeBy;//time left pannel for player A,B
-int timeCache;//time cache for click delay
 int quazA, quazB;//quazer left of player A, B
 int lastBlockX, lastBlockY;// say what was last block
 
 String loginID=" ", loginPD=" ", DeviceID=" ";
 String signupID=" ", signupPD=" ", signupPDC=" ", signupEmail=" "; // SignupPDC is check password to avoid typos
-String enemyID=" ";
+String playerID=" ", enemyID=" ";
 int lastEnemyAction = 0; //0 default, 1 is quod, 2 is quaz, 3 is say quod(squd)
 int enemyBlkX=0, enemyBlkY=0; //x, y coordinate of enemy;
 
@@ -123,16 +129,10 @@ void setup() {
   timeBx=1012;
   timeBy=130;
 
-  timeCache=0;//time cache, for click delay
 
   quazA=6;
   quazB=6;
   click=0;
   gmod=-100;
   turn=-1;
-}
-
-void connectServer() {
-  myClient = new Client(this, Settings[2], parseInt(Settings[3]));
-  serverstate = 1;
 }

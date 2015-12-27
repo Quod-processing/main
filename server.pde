@@ -11,7 +11,6 @@ void recieveServer() {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID)&&lineCache[2].equals(signupID)&&lineCache[3].equals("true")) {
           String md=hexChange(messageDigest(signupPD, "SHA-256"));
-          log.println("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
           myClient.write("4"+":"+DeviceID+":"+signupID+":"+signupEmail+":"+md+"::");
         }
       } else if (lineCache[0].equals("2")) {
@@ -31,7 +30,6 @@ void recieveServer() {
       if (lineCache[0].equals("1")) {
         if (lineCache[1].equals(DeviceID) && lineCache[2].equals(loginID) && lineCache[3].equals("true")) {
           String md=hexChange(messageDigest(loginPD, "SHA-256"));
-          log.println("2"+":"+DeviceID+":"+loginID+":"+md+"::");
           myClient.write("2"+":"+DeviceID+":"+loginID+":"+md+"::");
         }
       } else if (lineCache[0].equals("2")) {
@@ -92,8 +90,14 @@ void recieveServer() {
 }
 
 
-
 //developing..
 void SendServer(String messageSend) {
-  myClient.write(messageSend);
+  log.println(messageSend);
+  myClient.write(messageSend+":"+hexChange(messageDigest(messageSend, "md5")).substring(0,4)+"||");
+}
+
+
+void connectServer() {
+  myClient = new Client(this, Settings[2], parseInt(Settings[3]));
+  serverstate = 1;
 }

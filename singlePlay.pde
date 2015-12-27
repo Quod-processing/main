@@ -48,7 +48,7 @@ void snglP2() {
     } else if (mouseY>380&&mouseY<450) {
       rect(width/2-140, 380, 280, 70);
       if (click==1) {
-        turn=4;
+        turn=0;
         gmod = -500;
         click=0;
         statemod=0;

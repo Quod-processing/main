@@ -1,6 +1,9 @@
 //aWin, bWin : show, A, B win
 //showBlock : show gameboard
 //showQuaz
+//showID
+//showDownsideUi
+//mouseClickCheck
 //menu
 //hexChange
 //SHA-256
@@ -46,7 +49,7 @@ void menu() {
     fill(0);
     text("info", width/8+36, 57);
     image(quodIcon, width/2, 170, 130, 130);
-    text("quod v0.6.0b2 BUILD55", width/2, 265);
+    text("quod v0.6.0b2 BUILD56", width/2, 265);
     image(mileuIcon, width/2, 370, 130, 130);
     text("software by mileu, seungwonpark", width/2, 480);
     text("visit 'mileu.ml' for more information", width/2, 550);
@@ -221,6 +224,63 @@ void showQuaz() {
   }
 }
 
+void showID(String playerA, String playerB) {
+  //red, playerA
+  fill(255, 0, 0);
+  textSize(48);
+  textAlign(CENTER, CENTER);
+  text(playerA, 124, 40);
+
+  //blue, playerB
+  fill(0, 0, 255);
+  textSize(48);
+  text(playerB, 1012, 40);
+}
+
+void showDownsideUi() {
+  textSize(60);
+  noStroke();
+  if (turn == 0 || turn == 2) {
+    fill(248, 236, 114);
+    rect(0, 540, 248, 100);
+    fill(0);
+    text("quod", 124, 590);
+    fill(193, 243, 214);
+    rect(888, 540, 248, 100);
+    fill(0);
+    text("wait", 1012, 590);
+  } else if (turn == 1 || turn == 3) {
+    fill(193, 243, 214);
+    rect(0, 540, 248, 100);
+    fill(0);
+    text("wait", 124, 590);
+    fill(248, 236, 114);
+    rect(888, 540, 248, 100);
+    fill(0);
+    text("quod", 1012, 590);
+  }
+}
+void mouseClickCheck() {
+
+  if (click==1&&0<int((mouseX-204)/57)&&int((mouseX-204)/57)<12&&((mouseX-204)%57)<45&&0<int((mouseY+44)/57)&&int((mouseY+44)/57)<12&&((mouseY+44)%57)<45) {
+    if (blk[int((mouseX-204)/57)][int((mouseY+44)/57)]==1) {
+      if (mouseButton == LEFT) {
+        lastBlockX=int((mouseX-204)/57);
+        lastBlockY=int((mouseY+44)/57);
+        turn+=2;
+        blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=turn;        
+        gmod = -gmod;
+        if (turn == 0) timeA=0;
+        else timeB=0;
+      } else if (mouseButton == RIGHT && (turn==0 && quazA>0) || (turn==1 && quazB>0)) {
+        blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
+        if (turn == 0) quazA-=1;
+        else quazB-=1;
+        gmod = -gmod;
+      }
+    }
+  }
+}
 void aWin() {
 
   fill(255);
@@ -297,7 +357,6 @@ void reset() {
   timeBx=1012;
   timeBy=130;
 
-  timeCache=0;//time cache, for click delay
 
   quazA=6;
   quazB=6;

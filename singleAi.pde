@@ -4,52 +4,9 @@ void snglPai1() {
   background(243, 241, 228);
   showBlock();
   showQuaz();//show number of quaz left
+  showID("A", "B");
+  showDownsideUi();
 
-  //red, playerA
-  fill(255, 0, 0);
-  textSize(48);
-  textAlign(CENTER, CENTER);
-  text("A", 124, 40);
-
-  //blue, playerB
-  fill(0, 0, 255);
-  textSize(48);
-  text("B", 1012, 40);
-
-  if (turn == 0) {
-    textSize(60);          
-    noStroke();          
-    fill(248, 236, 114);          
-    rect(0, 540, 248, 100);          
-    fill(0);          
-    text("quod", 124, 590);   
-    fill(193, 243, 214);     
-    rect(888, 540, 248, 100);     
-    fill(0);     
-    text("wait", 1012, 590);
-  } else if (turn == 2) {
-    textSize(60);          
-    noStroke();          
-    fill(248, 236, 114);          
-    rect(0, 540, 248, 100);          
-    fill(0);          
-    text("quod", 124, 590);  
-    fill(193, 243, 214);     
-    rect(888, 540, 248, 100);     
-    fill(0);     
-    text("wait", 1012, 590);
-  } else if (turn == 1 || turn == 3) {
-    textSize(60);     
-    noStroke();     
-    fill(193, 243, 214);     
-    rect(0, 540, 248, 100);     
-    fill(0);     
-    text("wait", 124, 590);      
-    fill(248, 236, 114);          
-    rect(888, 540, 248, 100);          
-    fill(0);          
-    text("finish", 1012, 590);
-  }
 
   gmod = -gmod;
 }
@@ -73,26 +30,7 @@ void snglPai2() {
     strokeWeight(3);
     line(timeAx, timeAy, timeAx + cos(scdA)*40, timeAy+sin(scdA)*40);
 
-
-
-
-    //mouse click check
-    if (click==1&&0<int((mouseX-204)/57)&&int((mouseX-204)/57)<12&&((mouseX-204)%57)<45&&0<int((mouseY+44)/57)&&int((mouseY+44)/57)<12&&((mouseY+44)%57)<45) {
-      if (blk[int((mouseX-204)/57)][int((mouseY+44)/57)]==1) {
-        if (mouseButton == LEFT) {
-          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=2;
-          lastBlockX=int((mouseX-204)/57);
-          lastBlockY=int((mouseY+44)/57);
-          gmod = -gmod;
-          turn=2;
-          timeA=0;
-        } else if (mouseButton == RIGHT&&quazA>0) {
-          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
-          gmod = -gmod;
-          quazA-=1;
-        }
-      }
-    }
+    mouseClickCheck();
 
     //say there is quod
     if (click==1&&mouseX<248&&mouseY>540) {

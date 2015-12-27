@@ -4,67 +4,13 @@ void onlPvs1() {
   background(243, 241, 228);
   showBlock();
   showQuaz();//show number of quaz left
-
-  //red, playerA
-  fill(255, 0, 0);
-  textSize(48);
-  textAlign(CENTER, CENTER);
-  text(loginID, 124, 40);
-
-  //blue, playerB
-  fill(0, 0, 255);
-  textSize(48);
-  text(enemyID, 1012, 40);
+  showID(loginID, enemyID);
 
   fill(240, 248, 255);
   noStroke();
   ellipse(timeBx, timeBy, 100, 100);
 
-  if (turn == 0) {
-    textSize(60);          
-    noStroke();          
-    fill(248, 236, 114);          
-    rect(0, 540, 248, 100);          
-    fill(0);          
-    text("quod", 124, 590);   
-    fill(193, 243, 214);     
-    rect(888, 540, 248, 100);     
-    fill(0);     
-    text("wait", 1012, 590);
-  } else if (turn == 2) {
-    textSize(60);          
-    noStroke();          
-    fill(248, 236, 114);          
-    rect(0, 540, 248, 100);          
-    fill(0);          
-    text("quod", 124, 590);  
-    fill(193, 243, 214);     
-    rect(888, 540, 248, 100);     
-    fill(0);     
-    text("wait", 1012, 590);
-  } else if (turn == 1) {
-    textSize(60); 
-    noStroke();
-    fill(193, 243, 214);
-    rect(0, 540, 248, 100);
-    fill(0);
-    text("wait", 124, 590);
-    fill(248, 236, 114);
-    rect(888, 540, 248, 100);
-    fill(0);
-    text("finish", 1012, 590);
-  } else if (turn == 3) {
-    textSize(60); 
-    noStroke();
-    fill(193, 243, 214);
-    rect(0, 540, 248, 100);
-    fill(0);
-    text("wait", 124, 590);
-    fill(248, 236, 114);
-    rect(888, 540, 248, 100);
-    fill(0);
-    text("finish", 1012, 590);
-  }
+  showDownsideUi();
 
   gmod = -gmod;
 }
