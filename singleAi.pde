@@ -30,7 +30,23 @@ void snglPai2() {
     strokeWeight(3);
     line(timeAx, timeAy, timeAx + cos(scdA)*40, timeAy+sin(scdA)*40);
 
-    mouseClickCheck();
+    //mouse click check
+    if (click==1&&0<int((mouseX-204)/57)&&int((mouseX-204)/57)<12&&((mouseX-204)%57)<45&&0<int((mouseY+44)/57)&&int((mouseY+44)/57)<12&&((mouseY+44)%57)<45) {
+      if (blk[int((mouseX-204)/57)][int((mouseY+44)/57)]==1) {
+        if (mouseButton == LEFT) {
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=2;
+          lastBlockX=int((mouseX-204)/57);
+          lastBlockY=int((mouseY+44)/57);
+          gmod = -gmod;
+          turn=2;
+          timeA=0;
+        } else if (mouseButton == RIGHT&&quazA>0) {
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
+          gmod = -gmod;
+          quazA-=1;
+        }
+      }
+    }
 
     //say there is quod
     if (click==1&&mouseX<248&&mouseY>540) {

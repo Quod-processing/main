@@ -26,7 +26,23 @@ void snglPvs2() {
     strokeWeight(3);
     line(timeAx, timeAy, timeAx + cos(scdA)*40, timeAy+sin(scdA)*40);
 
-    mouseClickCheck();
+    //mouse click check
+    if (click==1&&0<int((mouseX-204)/57)&&int((mouseX-204)/57)<12&&((mouseX-204)%57)<45&&0<int((mouseY+44)/57)&&int((mouseY+44)/57)<12&&((mouseY+44)%57)<45) {
+      if (blk[int((mouseX-204)/57)][int((mouseY+44)/57)]==1) {
+        if (mouseButton == LEFT) {
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=2;
+          lastBlockX=int((mouseX-204)/57);
+          lastBlockY=int((mouseY+44)/57);
+          turn=6;
+          gmod = -gmod;
+          timeA=0;
+        } else if (mouseButton == RIGHT&&quazA>0) {
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
+          quazA-=1;
+          gmod = -gmod;
+        }
+      }
+    }
 
     //say there is quod
     if (click==1&&mouseX<248&&mouseY>540) {
@@ -83,7 +99,23 @@ void snglPvs2() {
     strokeWeight(3);
     line(timeBx, timeBy, timeBx + cos(scdB)*40, timeBy+sin(scdB)*40);
 
-    mouseClickCheck();
+    //mouse click check
+    if (click==1&&0<int((mouseX-204)/57)&&int((mouseX-204)/57)<12&&((mouseX-204)%57)<45&&0<int((mouseY+44)/57)&&int((mouseY+44)/57)<12&&((mouseY+44)%57)<45) {
+      if (blk[int((mouseX-204)/57)][int((mouseY+44)/57)]==1) {
+        if (mouseButton == LEFT) {
+          lastBlockX=int((mouseX-204)/57);
+          lastBlockY=int((mouseY+44)/57);
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=3;        
+          turn=7;
+          gmod = -gmod;
+          timeB=0;
+        } else if (mouseButton == RIGHT&&quazB>0) {
+          blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=0;
+          quazB-=1;
+          gmod = -gmod;
+        }
+      }
+    }
 
     //say there is quod
     if (click==1&&mouseX>888&&mouseY>540) {

@@ -1,4 +1,4 @@
-//v0.6.0b2
+//v0.6.0
 //beware for singleAI in ai check time.
 void draw() {
 
