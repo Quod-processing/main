@@ -33,7 +33,7 @@ void snglPvs2() {
           blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=2;
           lastBlockX=int((mouseX-204)/57);
           lastBlockY=int((mouseY+44)/57);
-          turn=6;
+          turn=2;
           gmod = -gmod;
           timeA=0;
         } else if (mouseButton == RIGHT&&quazA>0) {
@@ -106,7 +106,7 @@ void snglPvs2() {
           lastBlockX=int((mouseX-204)/57);
           lastBlockY=int((mouseY+44)/57);
           blk[int((mouseX-204)/57)][int((mouseY+44)/57)]=3;        
-          turn=7;
+          turn=3;
           gmod = -gmod;
           timeB=0;
         } else if (mouseButton == RIGHT&&quazB>0) {

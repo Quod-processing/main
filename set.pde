@@ -96,7 +96,7 @@ void setup() {
   indexText();
   thread("connectServer");
   surface.setSize(parseInt(Settings[0]), parseInt(Settings[1]));
-  surface.setTitle("quod v0.6.0");
+  surface.setTitle("quod v0.6.1");
   surface.setResizable(true);
   font = loadFont("mileuEn.vlw");
   textFont(font, 48);

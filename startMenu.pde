@@ -12,7 +12,7 @@ void loadS1() {
   text("Quod", width/2, 120);
   textSize(36);
   fill(255, 135, 38);
-  text("v0.6.0", width/2, 170);
+  text("v0.6.1", width/2, 170);
   textSize(48);
   fill(0);
   textAlign(CENTER, BOTTOM);
