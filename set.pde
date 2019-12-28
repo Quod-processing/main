@@ -30,7 +30,7 @@ int statemod = 1;//server state, etc..
 int serverstate = 0;
 int aiTurn = -1;//check if ai will work or not
 int[][] blk = new int[50][50];//x,y coordinate if tile exist 0:no, 1: default 2:red 3: blue
-int[][] aiBlk = new int[50][50];//for tile, for ai compute
+float[][] aiBlk = new float[50][50];//for tile, for ai compute
 double aiScore=-5000;
 int aiansX, aiansY, aicacheX, aicacheY;
 int aiFinish=0;
